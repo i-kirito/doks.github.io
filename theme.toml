@@ -1,0 +1,14 @@
+name = "Doks"
+license = "MIT"
+licenselink = "https://github.com/i-kirito"
+description = "文档主题的hugo页面"
+
+homepage = "https://github.com/i-kirito/doks"
+demosite = "https://doks.xazz.top"
+
+tags = ["landing page", "documentation", "blog", "minimal", "modern", "customizable", "search", "dark mode", "bootstrap"]
+features = ["security aware", "fast by default", "seo-ready", "development tools", "bootstrap framework", "netlify-ready", "full text search", "page layouts", "dark mode"]
+
+[author]
+  name = "小A猪崽 | 有用的知识"
+  homepage = "https://doks.xazz.top"

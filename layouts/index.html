@@ -1,0 +1,77 @@
+{{ define "main" }}
+<section class="section container-fluid mt-n3 pb-3">
+  <div class="row justify-content-center">
+    <div class="col-lg-12 text-center">
+      <h1 class="mt-0">{{ .Title }}</h1>
+    </div>
+    <div class="col-lg-9 col-xl-8 text-center">
+      <p class="lead">{{ .Params.lead | safeHTML }}</p>
+      <br>
+      <a class="btn btn-primary btn-lg px-4 mb-2" href="/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}prologue/introduction/" role="button">{{ i18n "get-started" }}</a>
+      <p class="meta">Open-source MIT Licensed. <a href="https://github.com/i-kirito/doks">GitHub v{{ $data := getJSON "/package.json" }}{{ $data.version }}</a></p>
+    </div>
+  </div>
+</section>
+{{ end }}
+
+{{ define "sidebar-prefooter" }}
+  {{ if eq $.Site.Language.LanguageName "English" }}
+  <!-- 首页内容部分开始 -->
+  <section class="section section-sm">
+    <div class="container">
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-5">
+          <!-- 第一个 -->
+          <h2 class="h4"></h2>
+          <p></p>
+        </div>
+        <div class="col-lg-5">
+          <!-- 第二个 -->
+          <h2 class="h4"><a href="/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}webstack/introduction/">Webstack开源 ⚡️</a></h2>
+          <p>Github <a style="color: blue;" href="https://github.com/i-kirito/nav.github.io" target="_blank">Hugo-Webstack</a>
+          一款基于hugo的开源主题，导航站webstack的移植，点击标题查看搭建教程。</p>
+        </div>
+        <div class="col-lg-5">
+          <!-- 第三个 -->
+          <h2 class="h4"></h2>
+          <p></p>
+        </div>
+      </div>
+      <div class="row justify-content-center text-center">
+        <div class="col-lg-5">
+          <!-- 第四个 -->
+          <h2 class="h4"></h2>
+          <p></p>
+        </div>
+        <div class="col-lg-5">
+          <!-- 第五个 -->
+          <h2 class="h4"></h2>
+          <p></p>
+        </div>
+        <div class="col-lg-5">
+          <!-- 第六个 -->
+          <h2 class="h4"></h2>
+          <p></p>
+          <!-- 增加后删除以下br -->
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+          <br>
+        </div>
+      </div>
+    </div>
+  </section>
+  {{ end }}
+{{ end }}
+
+{{ define "sidebar-footer" }}
+<section class="section section-sm container-fluid">
+  <div class="row justify-content-center text-center">
+    <div class="col-lg-9">
+      {{- .Content -}}
+    </div>
+  </div>
+</section>
+{{ end }}
