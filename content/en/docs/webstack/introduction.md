@@ -2,8 +2,8 @@
 title: "介绍"
 description: ""
 lead: "本项目是基于纯静态的网址导航网站 webstack.cc 制作的 Hugo 主题，其中部分代码参考了以下几个开源项目："
-date: 2020-10-06T08:48:57+00:00
-lastmod: 2020-10-06T08:48:57+00:00
+date: 2023-04-04T08:48:57+00:00
+lastmod: 2023-04-04T08:48:57+00:00
 draft: false
 images: []
 menu:
@@ -13,11 +13,11 @@ weight: 100
 toc: true
 ---
 
-> https://github.com/liutongxu/liutongxu.github.io
+> [https://github.com/liutongxu/liutongxu.github.io](https://github.com/liutongxu/liutongxu.github.io)
 >
-> https://github.com/iplaycode/webstack-hugo
+> [https://github.com/iplaycode/webstack-hugo](https://github.com/iplaycode/webstack-hugo)
 >
-> https://github.com/shenweiyan/WebStack-Hugo
+> [https://github.com/shenweiyan/WebStack-Hugo](https://github.com/shenweiyan/WebStack-Hugo)
 
 ## Get started
 

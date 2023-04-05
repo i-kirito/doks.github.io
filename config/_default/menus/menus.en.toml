@@ -1,8 +1,8 @@
 [[docs]]
-  name = "Prologue"
+  name = "doks"
   weight = 10
-  identifier = "prologue"
-  url = "/docs/prologue/"
+  identifier = "doks"
+  url = "/docs/doks/"
 
 [[docs]]
   name = "Help"
@@ -30,8 +30,8 @@
 
 [[main]]
   name = "文档"
-  url = "/docs/prologue/introduction/"
-# url = "/docs/1.0/prologue/introduction/"
+  url = "/docs/help/start/"
+# url = "/docs/1.0/doks/introduction/"
   weight = 10
 
 # [[main]]
@@ -41,27 +41,27 @@
 
 [[main]]
   name = "博客"
-  url = "/blog/"
+  url = "/blog/ikirito"
   weight = 20
 
 [[main]]
   name = "源码"
   weight = 30
   identifier = "get-started"
-  url = "/docs/prologue/introduction/"
+  url = "/docs/doks/"
 
 [[main]]
-  name = "部署"
+  name = "搭建"
   weight = 40
-  identifier = "quick-start"
-  url = "/docs/prologue/quick-start/"
+  identifier = "start"
+  url = "/docs/help/start/"
   parent = "get-started"
 
 [[main]]
-  name = "步骤"
+  name = "部署"
   weight = 50
-  identifier = "tutorial"
-  url = "https://getdoks.org/tutorial/introduction/"
+  identifier = "pull"
+  url = "/docs/help/pull/"
   parent = "get-started"
 
 [[social]]

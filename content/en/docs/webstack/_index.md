@@ -1,5 +1,5 @@
 ---
-title : "导航站开源"
+title : "导航站"
 description: "导航站开源文档"
 lead: ""
 date: 2023-3-31T08:48:45+00:00

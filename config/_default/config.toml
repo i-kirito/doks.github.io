@@ -1,4 +1,4 @@
-baseurl = "https://doks.netlify.app/"
+baseurl = "https://doks.xazz,top/"
 canonifyURLs = false
 disableAliases = true
 disableHugoGeneratorInject = true
@@ -18,21 +18,21 @@ disableLanguages = ["de", "nl"]
 home = ["HTML", "RSS", "REDIRECTS", "HEADERS"]
 section = ["HTML", "RSS", "SITEMAP"]
 
-# remove .{ext} from text/netlify
-[mediaTypes."text/netlify"]
+# remove .{ext} from text/xazz
+[mediaTypes."text/xazz"]
 suffixes = [""]
 delimiter = ""
 
-# add output format for netlify _redirects
+# add output format for xazz _redirects
 [outputFormats.REDIRECTS]
-mediaType = "text/netlify"
+mediaType = "text/xazz"
 baseName = "_redirects"
 isPlainText = true
 notAlternative = true
 
-# add output format for netlify _headers
+# add output format for xazz _headers
 [outputFormats.HEADERS]
-mediaType = "text/netlify"
+mediaType = "text/xazz"
 baseName = "_headers"
 isPlainText = true
 notAlternative = true
