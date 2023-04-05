@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>文档库 on</title><link>https://doks.xazz,top/docs/help/</link><description>Recent content in 文档库 on</description><generator>Hugo -- gohugo.io</generator><lastBuildDate>Tue, 04 Apr 2023 08:49:15 +0000</lastBuildDate><atom:link href="https://doks.xazz,top/docs/help/index.xml" rel="self" type="application/rss+xml"/><item><title>搭建</title><link>https://doks.xazz,top/docs/help/start/</link><pubDate>Thu, 12 Nov 2020 13:26:54 +0100</pubDate><guid>https://doks.xazz,top/docs/help/start/</guid><description>
+💡 Node.js框架下部署hugo静态页面 前置需要 #
+下载最新 node.js LTS版本 安装到本地或Linux服务器:
+fork并克隆主题 doks GitHub 到本地或Linux服务器:
+安装依赖 #
+在主题目录下执行命令安装依赖: npm install
+启动本地服务 #
+安装成功后执行命令启动本地服务: npm run start</description></item><item><title>部署</title><link>https://doks.xazz,top/docs/help/pull/</link><pubDate>Tue, 04 Apr 2023 15:22:20 +0100</pubDate><guid>https://doks.xazz,top/docs/help/pull/</guid><description>把本地仓库推送到远程仓库 #
+使用 GitHub Desktop 推送到远程仓库
+或者直接命令行推送到远程仓库
+git init # 初始化本地仓库
+git add . # 添加所有文件到暂存区
+git commit -m &amp;quot;first commit&amp;quot; # 提交到本地仓库
+git remote add origin
+git push -u origin master # 推送到远程仓库
+node.js生成静态页面 npm run build:preview</description></item><item><title>FAQ</title><link>https://doks.xazz,top/docs/help/faq/</link><pubDate>Tue, 06 Oct 2020 08:49:31 +0000</pubDate><guid>https://doks.xazz,top/docs/help/faq/</guid><description>官方开源文档 #
+Hugo
+doks</description></item></channel></rss>
