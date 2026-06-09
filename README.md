@@ -1,155 +1,91 @@
 <p align="center">
   <a href="https://doks.xazz.top/">
-    <img alt="Doks" src="https://doks.netlify.app/doks.svg" width="60">
+    <img alt="小A猪崽知识库" src="static/logo-doks.svg" width="72">
   </a>
 </p>
 
-<h1 align="center">
-  小A猪崽 | 有用的知识库
-</h1>
+<h1 align="center">小A猪崽 | 有用的知识库</h1>
 
 <p align="center">
-  Node.js搭建的hugo静态页面，帮助文档阅读
+  基于 Hugo + Doks 的个人知识库，用来整理常用操作、文档站搭建流程、导航站维护记录和日常技术笔记。
 </p>
 
 <p align="center">
-  <a href="https://github.com/h-enk/doks/blob/master/LICENSE">
-    <img src="https://img.shields.io/github/license/h-enk/doks?style=flat-square" alt="GitHub">
-  </a>
-  <a href="https://github.com/h-enk/doks/releases">
-    <img src="https://img.shields.io/github/v/release/h-enk/doks?include_prereleases&style=flat-square"alt="GitHub release (latest SemVer including pre-releases)">
-  </a>
-  <a href="https://www.npmjs.com/package/@hyas/doks">
-    <img src="https://img.shields.io/npm/v/@hyas/doks?style=flat-square" alt="npm (scoped)">
-  </a>
-  <a href="https://github.com/h-enk/doks/actions?query=workflow%3A%22Hyas+CI%22">
-    <img src="https://img.shields.io/github/workflow/status/h-enk/doks/Hyas%20CI/master?style=flat-square" alt="GitHub Workflow Status (branch)">
-  </a>
-  <a href="https://app.netlify.com/sites/doks/deploys">
-    <img src="https://img.shields.io/netlify/8a1009d5-88ac-413e-96ef-3f928674a083?style=flat-square" alt="Netlify">
-  </a>
+  <a href="https://doks.xazz.top/">在线访问</a>
+  ·
+  <a href="https://github.com/i-kirito/doks.github.io">GitHub 仓库</a>
+  ·
+  <a href="https://nav.xazz.top/">导航站</a>
 </p>
 
-![Doks — Modern Documentation Theme](https://raw.githubusercontent.com/h-enk/doks/master/images/doks.png)
+## 项目简介
 
-## Demo
+这个仓库是 [doks.xazz.top](https://doks.xazz.top/) 的源码，站点主要用于沉淀个人常用知识和维护说明。
 
-- [doks.xazz.top](https://doks.xazz.top/)
+当前内容包括：
 
-## Why Doks?
+- Doks/Hugo 文档站的本地搭建和启动流程
+- 静态站点发布、部署和维护记录
+- WebStack-Hugo 导航站相关资料
+- 后续技术笔记和折腾记录
 
-Nine main reasons why you should use Doks:
+## 本地开发
 
-1. __Security aware__. Get A+ scores on [Mozilla Observatory](https://observatory.mozilla.org/analyze/doks.netlify.app) out of the box. Easily change the default Security Headers to suit your needs.
+环境要求：
 
-2. __Fast by default__. Get 100 scores on [Google Lighthouse](https://googlechrome.github.io/lighthouse/viewer/?gist=59aafe464a68f8bc30b8e9a636d5b053) by default. Doks removes unused css, prefetches links, and lazy loads images.
+- [Node.js](https://nodejs.org/) 16.16 或更高版本
+- npm
 
-3. __SEO-ready__. Use sensible defaults for structured data, open graph, and Twitter cards. Or easily change the SEO settings to your liking.
-
-4. __Development tools__. Code with confidence. Check styles, scripts, and markdown for errors and fix automatically or manually.
-
-5. __Bootstrap framework__. Build robust, flexible, and intuitive websites with Bootstrap 5. Easily customize your Doks site with the source Sass files.
-
-6. __Netlify-ready__. Deploy to Netlify with sensible defaults. Easily use Netlify Functions, Netlify Redirects, and Netlify Headers.
-
-7. __Full text search__. Search your Doks site with FlexSearch. Easily customize index settings and search options to your liking.
-
-8. __Page layouts__. Build pages with a landing page, blog, or documentation layout. Add custom sections and components to suit your needs.
-
-9. __Dark mode__. Switch to a low-light UI with the click of a button. Change colors with variables to match your branding.
-
-### Other features
-
-- __Multilingual and i18n__ support
-- __Versioning__ documentation support
-- __KaTeX__ math typesetting
-- __Mermaid__ diagrams and visualization
-- __highlight.js__ syntax highlighting
-
-## Requirements
-
-- [Git](https://git-scm.com/) — latest source release
-- [Node.js](https://nodejs.org/) — latest LTS version or newer
-
-<details>
-<summary>Why Node.js?</summary>
-
-Doks uses npm (included with Node.js) to centralize dependency management, making it [easy to update](https://getdoks.org/docs/help/how-to-update/) resources, build tooling, plugins, and build scripts.
-
-</details>
-
-## Get started
-
-Start a new Doks project in three steps:
-
-### 1. Create a new site
-
-Doks is available as a child theme and a starter theme.
-
-#### Child theme
-
-- Intended for novice to intermediate users
-- Intended for minor customizations
-- [Easily update npm packages](https://getdoks.org/docs/help/how-to-update/) — __including__ [Doks](https://www.npmjs.com/package/@hyas/doks)
+安装依赖：
 
 ```bash
-git clone https://github.com/h-enk/doks-child-theme.git my-doks-site && cd my-doks-site
+npm ci
 ```
 
-#### Starter theme
-
-- Intended for intermediate to advanced users
-- Intended for major customizations
-- [Easily update npm packages](https://getdoks.org/docs/help/how-to-update/)
-
-```bash
-git clone https://github.com/h-enk/doks.git my-doks-site && cd my-doks-site
-```
-
-<details>
-<summary>Help me choose</summary>
-
-Not sure which one is for you? Pick the child theme.
-
-</details>
-
-### 2. Install dependencies
-
-```bash
-npm install
-```
-
-### 3. Start development server
+启动本地预览：
 
 ```bash
 npm run start
 ```
 
-## Other commands
+默认访问地址：
 
-Doks comes with [commands](https://getdoks.org/docs/prologue/commands/) for common tasks.
+```text
+http://localhost:1313/
+```
 
-## Documentation
+如果需要指定端口：
 
-- [Netlify](https://docs.netlify.com/)
-- [Hugo](https://gohugo.io/documentation/)
+```bash
+npm run start -- --port 1324
+```
+
+## 常用命令
+
+```bash
+npm run lint    # 检查脚本、样式和 Markdown
+npm run build   # 生成生产静态文件
+npm run clean   # 清理 public 和 resources
+```
+
+## 目录说明
+
+```text
+content/            站点内容
+layouts/            Hugo 模板
+assets/scss/        样式源码
+assets/js/          前端脚本
+config/_default/    Hugo 配置
+static/             favicon、logo、manifest 等静态资源
+```
+
+## 相关项目
+
+- [Hugo](https://gohugo.io/)
 - [Doks](https://getdoks.org/)
+- [WebStack-Hugo 导航站源码](https://github.com/i-kirito/nav.github.io)
+- [小A猪崽导航站](https://nav.xazz.top/)
 
-## Communities
+## 许可
 
-- [Netlify Community](https://community.netlify.com/)
-- [Hugo Forums](https://discourse.gohugo.io/)
-- [Doks Discussions](https://github.com/h-enk/doks/discussions)
-
-## Sponsors
-
-Support this project by becoming a sponsor. Your logo will show up here with a link to your website.
-
-[![OC sponsor 0](https://opencollective.com/doks/tiers/sponsor/0/avatar.svg)](https://opencollective.com/doks/tiers/sponsor/0/website)
-[![OC sponsor 1](https://opencollective.com/doks/tiers/sponsor/1/avatar.svg)](https://opencollective.com/doks/tiers/sponsor/1/website)
-
-## Backers
-
-Support this project by becoming a backer. Your avatar will show up here.
-
-[![Backers](https://opencollective.com/doks/tiers/backer.svg?49741992)](https://opencollective.com/doks)
+本仓库沿用 MIT License，详见 [LICENSE](LICENSE)。
