@@ -1,6 +1,6 @@
 ---
 title: "ikirito - Mr.Liang 👋"
-description: ""
+description: "个人博客与技术笔记，记录一些文章、折腾过程和生活感悟。"
 excerpt: ""
 date: 2020-11-04T09:19:42+01:00
 lastmod: 2023-4-04T09:19:42+01:00

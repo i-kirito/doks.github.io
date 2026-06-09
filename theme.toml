@@ -3,7 +3,7 @@ license = "MIT"
 licenselink = "https://github.com/i-kirito"
 description = "文档主题的hugo页面"
 
-homepage = "https://github.com/i-kirito/doks"
+homepage = "https://github.com/i-kirito/doks.github.io"
 demosite = "https://doks.xazz.top"
 
 tags = ["landing page", "documentation", "blog", "minimal", "modern", "customizable", "search", "dark mode", "bootstrap"]

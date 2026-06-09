@@ -1,18 +1,25 @@
 {{ define "main" }}
-<div class="row justify-content-center">
+<div class="docs-list-page row justify-content-center">
   <div class="col-md-12 col-lg-10 col-xl-8">
     <article>
-      <h1 class="text-center">{{ if eq .CurrentSection .FirstSection }}{{ .Section | humanize }}{{ else }}{{ .Title }}{{ end }}</h1>
-      <div class="text-center">{{ .Content }}</div>
-			<div class="card-list">
+      <header class="docs-list-header text-center">
+        <p class="docs-list-kicker">文档索引</p>
+        <h1>{{ .Title }}</h1>
+        {{ with .Content -}}<div class="docs-list-lead">{{ . }}</div>{{ end -}}
+      </header>
+			<div class="card-list docs-list-grid">
 				{{ $currentSection := .CurrentSection }}
 				{{ range where .Site.RegularPages.ByTitle "Section" .Section }}
 					{{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
-						<div class="card my-3">
-							<div class="card-body">
-								<a class="stretched-link" href="{{ .RelPermalink }}">{{ .Params.title | title }} &rarr;</a>
-							</div>
-						</div>
+						<article class="docs-list-card">
+              <p class="docs-list-card-meta">{{ .Parent.Title }}</p>
+              <h2 class="h4"><a class="stretched-link" href="{{ .RelPermalink }}">{{ .Params.title | title }}</a></h2>
+              {{ with .Params.description -}}
+                <p>{{ . }}</p>
+              {{ else -}}
+                {{ with .Params.lead -}}<p>{{ . | safeHTML }}</p>{{ end -}}
+              {{ end -}}
+						</article>
 					{{ end }}
 				{{ end }}
 			</div>

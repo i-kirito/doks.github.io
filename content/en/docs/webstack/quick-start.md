@@ -1,6 +1,6 @@
 ---
 title: "Vercel部署"
-description: ""
+description: "记录使用 Vercel 托管 WebStack-Hugo 静态导航站的基础流程。"
 lead: "使用vercel静态网页托管服务部署"
 date: 2020-11-16T13:59:39+01:00
 lastmod: 2020-11-16T13:59:39+01:00

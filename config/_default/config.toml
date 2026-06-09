@@ -10,7 +10,6 @@ rssLimit = 10
 
 # Multilingual
 defaultContentLanguage = "en"
-disableLanguages = ["de", "nl"]
 # defaultContentLanguageInSubdir = true
 
 # add redirects/headers
@@ -57,7 +56,6 @@ rel  = "sitemap"
   priority = 0.5
 
 [taxonomies]
-  contributor = "contributors"
   category = "categories"
   tag = "tags"
 

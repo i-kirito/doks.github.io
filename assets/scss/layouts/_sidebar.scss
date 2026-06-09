@@ -58,7 +58,7 @@
 a.docs-link {
   color: $body-color;
   display: block;
-  padding: 0.125rem 0;
+  padding: 0.25rem 0.5rem;
   font-size: $font-size-base;
 }
 
@@ -83,6 +83,7 @@ a.docs-link {
   display: block;
   padding: 0.125rem 0;
   font-size: $font-size-base * 0.9375;
+  transition: color 0.2s ease, transform 0.2s ease;
 }
 
 .docs-link:hover,
@@ -90,6 +91,32 @@ a.docs-link {
 .page-links a:hover {
   text-decoration: none;
   color: $link-color;
+}
+
+.docs-link:hover,
+.docs-link.active {
+  background: rgba($primary, 0.07);
+}
+
+.docs-link.active {
+  box-shadow: inset 3px 0 0 $primary;
+}
+
+.page-links {
+  padding-left: 1rem;
+  border-left: 1px solid $gray-200;
+}
+
+.page-links a:hover {
+  transform: translateX(2px);
+}
+
+.doks-toc-toggle {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
 }
 
 .nav-link.active,

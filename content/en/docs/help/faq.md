@@ -1,6 +1,6 @@
 ---
 title: "FAQ"
-description: ""
+description: "整理本站使用过程中常用的 Hugo 与 Doks 官方文档入口。"
 lead: "使用帮助"
 date: 2020-10-06T08:49:31+00:00
 lastmod: 2020-10-06T08:49:31+00:00

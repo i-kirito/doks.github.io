@@ -62,3 +62,287 @@ p.meta {
 .page-link:hover {
   text-decoration: none;
 }
+
+.home-hero {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+  background:
+    linear-gradient(135deg, rgba($gray-100, 0.95), rgba($white, 0.98) 48%, rgba($blue-300, 0.16)),
+    radial-gradient(circle at 15% 10%, rgba($yellow, 0.18), transparent 28%);
+  border-bottom: 1px solid $gray-200;
+}
+
+.home-hero .container {
+  position: relative;
+}
+
+.home-eyebrow,
+.home-index-kicker,
+.home-feature-kicker,
+.docs-page-kicker,
+.docs-list-kicker,
+.docs-list-card-meta {
+  color: $gray-600;
+  font-size: $font-size-sm;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 0.75rem;
+  text-transform: uppercase;
+}
+
+.home-hero h1 {
+  max-width: 12ch;
+  margin-bottom: 1rem;
+  line-height: 1.05;
+}
+
+.home-hero .lead {
+  max-width: 42rem;
+  color: $gray-700;
+}
+
+.home-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.75rem;
+  margin-bottom: 1rem;
+}
+
+.home-index-panel {
+  position: relative;
+  padding: 1.5rem;
+  background: rgba($white, 0.9);
+  border: 1px solid $gray-200;
+  border-radius: 0.5rem;
+  box-shadow: 0 1.25rem 3rem rgba($black, 0.08);
+}
+
+.home-index-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid $gray-200;
+}
+
+.home-index-header h2 {
+  margin: 0;
+}
+
+.home-index-icon {
+  flex: 0 0 auto;
+}
+
+.home-index-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.home-index-list li {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.875rem 0;
+}
+
+.home-index-divider {
+  border-top: 1px dashed $gray-200;
+}
+
+.home-index-number {
+  color: $primary;
+  font-size: $font-size-sm;
+  font-weight: 700;
+}
+
+.home-index-link {
+  color: $body-color;
+  font-weight: 600;
+}
+
+.home-feature-band {
+  padding-top: 3rem;
+  padding-bottom: 4rem;
+}
+
+.home-section-heading {
+  max-width: 42rem;
+  margin-bottom: 1.5rem;
+}
+
+.home-section-heading h2 {
+  margin-top: 0;
+}
+
+.home-feature {
+  position: relative;
+  height: 100%;
+  padding: 1.25rem;
+  background: $white;
+  border: 1px solid $gray-200;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.home-feature:hover {
+  border-color: rgba($primary, 0.35);
+  box-shadow: 0 1rem 2rem rgba($black, 0.06);
+  transform: translateY(-2px);
+}
+
+.home-feature h3 {
+  margin-top: 0;
+}
+
+.home-feature p:last-child {
+  margin-bottom: 0;
+}
+
+.home-feature a:not(.stretched-link) {
+  position: relative;
+  z-index: 2;
+}
+
+.docs-list-page {
+  padding-bottom: 2rem;
+}
+
+.docs-list-header {
+  margin-bottom: 2rem;
+}
+
+.docs-list-header h1 {
+  margin-top: 0;
+}
+
+.docs-list-lead {
+  color: $gray-700;
+}
+
+.docs-list-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.docs-list-card {
+  position: relative;
+  padding: 1.25rem;
+  background: $white;
+  border: 1px solid $gray-200;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.docs-list-card:hover {
+  border-color: rgba($primary, 0.35);
+  box-shadow: 0 0.75rem 1.75rem rgba($black, 0.05);
+  transform: translateY(-1px);
+}
+
+.docs-list-card h2 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.docs-list-card p:last-child {
+  margin-bottom: 0;
+}
+
+.docs-page-header {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid $gray-200;
+}
+
+.docs-page-header h1 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+}
+
+.docs-readable {
+  line-height: 1.75;
+}
+
+.docs-readable > :where(p, ul, ol, blockquote, details) {
+  max-width: 48rem;
+}
+
+.docs-readable > :where(h2, h3, h4) {
+  max-width: 52rem;
+}
+
+.docs-readable > h2 {
+  padding-top: 0.75rem;
+  border-top: 1px solid $gray-200;
+}
+
+.docs-navigation {
+  gap: 1rem;
+}
+
+.docs-nav-card {
+  display: block;
+  flex: 1 1 0;
+  max-width: 24rem;
+  text-decoration: none;
+}
+
+.docs-nav-card:hover,
+.docs-nav-card:focus {
+  text-decoration: none;
+}
+
+.docs-nav-card .card {
+  height: 100%;
+  border-radius: 0.5rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.docs-nav-card:hover .card,
+.docs-nav-card:focus .card {
+  border-color: rgba($primary, 0.35);
+  box-shadow: 0 0.75rem 1.75rem rgba($black, 0.05);
+  transform: translateY(-1px);
+}
+
+.docs-nav-card span {
+  display: block;
+  color: $gray-600;
+  font-size: $font-size-sm;
+  margin-bottom: 0.25rem;
+}
+
+.docs-nav-card strong {
+  color: $body-color;
+}
+
+@include media-breakpoint-down(lg) {
+  .home-hero {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
+
+  .home-hero h1 {
+    max-width: none;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .home-actions .btn {
+    width: 100%;
+  }
+
+  .home-index-panel,
+  .home-feature,
+  .docs-list-card {
+    border-radius: 0.375rem;
+  }
+
+  .docs-nav-card {
+    max-width: none;
+  }
+}

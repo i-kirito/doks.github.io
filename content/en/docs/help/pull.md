@@ -1,9 +1,9 @@
 ---
 title: "部署"
-description: ""
+description: "记录将本地 Hugo/Doks 项目推送到远程仓库并生成静态页面的基础流程。"
 lead: "把本地的项目部署到服务器上"
 date: 2023-04-04T15:22:20+01:00
-lastmod: 2020-04-04T15:22:20+01:00
+lastmod: 2023-04-04T15:22:20+01:00
 draft: false
 images: []
 menu: 
@@ -26,6 +26,7 @@ git commit -m "first commit" # 提交到本地仓库
 git remote add origin
 git push -u origin master # 推送到远程仓库
 ```
+
 - node.js生成静态页面
 
 ```bash
