@@ -14,8 +14,25 @@
   margin-bottom: 0;
 }
 
+#RunTime {
+  display: block;
+  width: 100%;
+  margin-top: 0.5rem;
+  color: #fc4e27;
+  font-size: $font-size-sm;
+  font-weight: 500;
+  line-height: 1.45;
+  text-align: center;
+}
+
 @include media-breakpoint-up(md) {
   .footer li {
     font-size: $font-size-base;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  #RunTime {
+    font-size: $font-size-sm * 0.92;
   }
 }

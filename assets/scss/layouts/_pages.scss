@@ -11,6 +11,16 @@
   visibility: hidden;
 }
 
+.docs-readable a {
+  overflow-wrap: anywhere;
+  text-underline-offset: 0.18em;
+}
+
+.docs-readable > p,
+.docs-readable li {
+  color: $gray-800;
+}
+
 h1:hover a,
 h2:hover a,
 h3:hover a,
@@ -170,6 +180,10 @@ p.meta {
   font-weight: 600;
 }
 
+.docs-readable li + li {
+  margin-top: 0.35rem;
+}
+
 .home-feature-band {
   padding-top: 2.25rem;
   padding-bottom: 3rem;
@@ -245,6 +259,12 @@ p.meta {
   gap: 1rem;
 }
 
+@include media-breakpoint-up(md) {
+  .docs-list-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 .docs-list-card {
   position: relative;
   padding: 1.25rem;
@@ -271,31 +291,79 @@ p.meta {
 
 .docs-page-header {
   margin-top: 2rem;
-  margin-bottom: 2rem;
-  padding-bottom: 1.5rem;
+  margin-bottom: 2.25rem;
+  padding-bottom: 1.75rem;
   border-bottom: 1px solid $gray-200;
 }
 
 .docs-page-header h1 {
   margin-top: 0;
   margin-bottom: 0.75rem;
+  font-size: clamp(2.25rem, 4.5vw, 3.5rem);
+  line-height: 1.05;
+  letter-spacing: 0;
+}
+
+.docs-page-header .lead {
+  max-width: 52rem;
+  color: $gray-700;
+  font-size: $font-size-lg;
+  line-height: 1.7;
 }
 
 .docs-readable {
+  font-size: $font-size-base * 1.02;
   line-height: 1.75;
 }
 
-.docs-readable > :where(p, ul, ol, blockquote, details) {
+.docs-readable > :where(p, ul, ol, blockquote, details, .alert) {
   max-width: 48rem;
 }
 
-.docs-readable > :where(h2, h3, h4) {
+.docs-readable > :where(h2, h3, h4, hr) {
   max-width: 52rem;
 }
 
 .docs-readable > h2 {
-  padding-top: 0.75rem;
+  margin-top: 2.5rem;
+  padding-top: 1.25rem;
   border-top: 1px solid $gray-200;
+  font-size: $font-size-base * 1.75;
+  line-height: 1.25;
+}
+
+.docs-readable > h3 {
+  margin-top: 2rem;
+  font-size: $font-size-base * 1.35;
+  line-height: 1.35;
+}
+
+.docs-readable > h4 {
+  margin-top: 1.5rem;
+  font-size: $font-size-base * 1.15;
+  line-height: 1.4;
+}
+
+.docs-readable > blockquote {
+  padding: 1rem 1.25rem;
+  color: $gray-700;
+  background: $gray-100;
+  border-left: 3px solid rgba($primary, 0.55);
+  border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.docs-readable > blockquote p:last-child {
+  margin-bottom: 0;
+}
+
+.docs-readable > details {
+  margin-top: 1.25rem;
+  margin-bottom: 1.75rem;
+}
+
+.docs-readable hr {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 }
 
 .docs-navigation {
@@ -383,6 +451,39 @@ p.meta {
 
   .home-feature-grid {
     grid-template-columns: 1fr;
+  }
+
+  .docs-page-header {
+    margin-top: 1.25rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.25rem;
+  }
+
+  .docs-page-header h1 {
+    font-size: 2.25rem;
+  }
+
+  .docs-page-header .lead,
+  .docs-readable {
+    font-size: $font-size-base;
+  }
+
+  .docs-readable {
+    line-height: 1.7;
+  }
+
+  .docs-readable > h2 {
+    margin-top: 2rem;
+    font-size: $font-size-base * 1.45;
+  }
+
+  .docs-readable > h3 {
+    margin-top: 1.5rem;
+    font-size: $font-size-base * 1.2;
+  }
+
+  .docs-readable > h4 {
+    font-size: $font-size-base * 1.05;
   }
 
   .home-index-panel,

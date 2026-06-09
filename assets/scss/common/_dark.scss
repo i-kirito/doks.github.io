@@ -376,6 +376,11 @@ $navbar-dark-active-color:          $link-color-dark;
   color: $body-color-dark;
 }
 
+[data-dark-mode] body .docs-readable > p,
+[data-dark-mode] body .docs-readable li {
+  color: $body-color-dark;
+}
+
 [data-dark-mode] body .page-links li:not(:first-child) {
   border-top: 1px dashed $border-dark;
 }
@@ -589,7 +594,8 @@ $navbar-dark-active-color:          $link-color-dark;
 }
 
 [data-dark-mode] body .home-hero .lead,
-[data-dark-mode] body .docs-list-lead {
+[data-dark-mode] body .docs-list-lead,
+[data-dark-mode] body .docs-page-header .lead {
   color: $body-color-dark;
 }
 
@@ -605,7 +611,8 @@ $navbar-dark-active-color:          $link-color-dark;
 
 [data-dark-mode] body .home-index-panel,
 [data-dark-mode] body .home-feature,
-[data-dark-mode] body .docs-list-card {
+[data-dark-mode] body .docs-list-card,
+[data-dark-mode] body .docs-readable > blockquote {
   background: $body-overlay-dark;
   border-color: $border-dark;
   box-shadow: none;

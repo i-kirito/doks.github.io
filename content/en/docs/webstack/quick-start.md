@@ -1,7 +1,7 @@
 ---
-title: "Vercel部署"
+title: "Vercel 部署"
 description: "记录使用 Vercel 托管 WebStack-Hugo 静态导航站的基础流程。"
-lead: "使用vercel静态网页托管服务部署"
+lead: "使用 Vercel 托管 WebStack-Hugo 静态导航站。"
 date: 2020-11-16T13:59:39+01:00
 lastmod: 2020-11-16T13:59:39+01:00
 draft: false
@@ -13,27 +13,28 @@ weight: 110
 toc: true
 ---
 
-## Requirements
+## 准备工作
 
-- [vercel](https://vercel.com/) — 注册一个免费账号并绑定github账号, 用于部署网站
-- [themes](https://github.com/shenweiyan/WebStack-Hugo) — 主题webstack 根据介绍下载到本地部署并推送静态页面到github仓库
+- 注册 [Vercel](https://vercel.com/) 账号，并绑定 GitHub。
+- 准备 WebStack-Hugo 项目仓库，例如
+  [shenweiyan/WebStack-Hugo](https://github.com/shenweiyan/WebStack-Hugo)。
 
-{{< details "What is vercel ?" >}}
-Vercel是一个云端平台，可以帮助开发者快速构建和部署高性能的现代应用程序。它支持各种编程语言和框架，如React、Next.js、Vue、Angular和Svelte等。
+{{< details "Vercel 是什么？" >}}
+Vercel 是一个云端部署平台，适合托管静态站点和现代前端应用。对于 Hugo
+这类静态站点，只需要绑定仓库并配置构建命令，就可以自动完成部署。
 {{< /details >}}
 
-## Add a new Project
+## 创建项目
 
-在vercel上添加一个新的项目, 选择github仓库, 选择webstack主题, 点击部署
+在 Vercel 控制台中创建新项目，选择 GitHub 仓库，确认构建配置后点击部署。
 
-### Manage Domains
+## 绑定域名
 
-在vercel上管理域名, 选择部署的项目, 点击添加域名
+在项目的域名设置中添加自定义域名，并按 Vercel 提示配置 DNS 记录。
 
-#### 快速克隆
+## 快速克隆主题
 
-- 安装好hugo并且配置好环境变量
-- 在hugo的themes目录下克隆主题
+安装 Hugo 并配置好环境变量后，可以在 Hugo 项目的 `themes/` 目录下克隆主题：
 
 ```bash
 git clone https://github.com/shenweiyan/WebStack-Hugo.git
