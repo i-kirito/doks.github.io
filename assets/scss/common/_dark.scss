@@ -584,7 +584,7 @@ $navbar-dark-active-color:          $link-color-dark;
 [data-dark-mode] body .home-hero {
   background:
     linear-gradient(135deg, rgba($body-overlay-dark, 0.98), rgba($body-bg-dark, 0.98) 52%, rgba($blue-300, 0.08)),
-    radial-gradient(circle at 15% 10%, rgba($link-color-dark, 0.08), transparent 28%);
+    linear-gradient(90deg, rgba($body-overlay-dark, 0.98), rgba($body-bg-dark, 0.96));
   border-bottom: 1px solid $border-dark;
 }
 

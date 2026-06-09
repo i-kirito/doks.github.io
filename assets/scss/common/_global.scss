@@ -40,6 +40,17 @@ h5.offcanvas-title {
   margin: 0;
 }
 
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
 body.docs {
   padding-top: 0 !important;
 }

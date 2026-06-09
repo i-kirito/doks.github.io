@@ -65,16 +65,18 @@ p.meta {
 
 .home-hero {
   position: relative;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  margin-right: calc(var(--bs-gutter-x) * -0.5);
+  margin-left: calc(var(--bs-gutter-x) * -0.5);
+  padding: 4.5rem var(--bs-gutter-x) 4.25rem;
   background:
-    linear-gradient(135deg, rgba($gray-100, 0.95), rgba($white, 0.98) 48%, rgba($blue-300, 0.16)),
-    radial-gradient(circle at 15% 10%, rgba($yellow, 0.18), transparent 28%);
+    linear-gradient(135deg, rgba($gray-100, 0.92), rgba($white, 0.98) 44%, rgba($blue-300, 0.16)),
+    linear-gradient(90deg, rgba($white, 0.92), rgba($blue-100, 0.22));
   border-bottom: 1px solid $gray-200;
 }
 
-.home-hero .container {
+.home-hero .container-xxl {
   position: relative;
+  max-width: 1280px;
 }
 
 .home-eyebrow,
@@ -91,14 +93,17 @@ p.meta {
   text-transform: uppercase;
 }
 
-.home-hero h1 {
-  max-width: 12ch;
+.home-title {
+  display: flex;
+  max-width: 14ch;
+  flex-wrap: wrap;
+  column-gap: 0.35em;
   margin-bottom: 1rem;
-  line-height: 1.05;
+  line-height: 1.04;
 }
 
 .home-hero .lead {
-  max-width: 42rem;
+  max-width: 39rem;
   color: $gray-700;
 }
 
@@ -112,6 +117,8 @@ p.meta {
 
 .home-index-panel {
   position: relative;
+  max-width: 25rem;
+  margin-left: auto;
   padding: 1.5rem;
   background: rgba($white, 0.9);
   border: 1px solid $gray-200;
@@ -164,22 +171,33 @@ p.meta {
 }
 
 .home-feature-band {
-  padding-top: 3rem;
-  padding-bottom: 4rem;
+  padding-top: 2.25rem;
+  padding-bottom: 3rem;
+}
+
+.home-feature-band .container-xxl {
+  max-width: 1280px;
 }
 
 .home-section-heading {
   max-width: 42rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.25rem;
 }
 
 .home-section-heading h2 {
   margin-top: 0;
 }
 
+.home-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
 .home-feature {
   position: relative;
   height: 100%;
+  min-height: 9.5rem;
   padding: 1.25rem;
   background: $white;
   border: 1px solid $gray-200;
@@ -322,18 +340,49 @@ p.meta {
 
 @include media-breakpoint-down(lg) {
   .home-hero {
-    padding-top: 3rem;
+    padding-top: 3.25rem;
     padding-bottom: 3rem;
   }
 
-  .home-hero h1 {
+  .home-title {
+    max-width: 16ch;
+  }
+
+  .home-index-panel {
     max-width: none;
+    margin-left: 0;
+  }
+
+  .home-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
 
 @include media-breakpoint-down(md) {
+  .home-hero {
+    padding-top: 2.75rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .home-title {
+    max-width: 11ch;
+  }
+
+  .home-title-divider {
+    display: none;
+  }
+
   .home-actions .btn {
     width: 100%;
+  }
+
+  .home-feature-band {
+    padding-top: 1.75rem;
+    padding-bottom: 2.25rem;
+  }
+
+  .home-feature-grid {
+    grid-template-columns: 1fr;
   }
 
   .home-index-panel,
