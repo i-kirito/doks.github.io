@@ -2,17 +2,17 @@
 
 // Source: https://material.io/design/color/dark-theme.html
 
-$body-bg-dark: $gray-900;
-$body-overlay-dark: darken($body-bg-dark, 2.5%);
+$body-bg-dark: #1b1b1f;
+$body-overlay-dark: #202127;
 
 /*
 $border-dark: darken($body-bg-dark, 2.5%);
 */
-$border-dark: $gray-800;
-$body-color-dark: $gray-300;
+$border-dark: #2e2e32;
+$body-color-dark: #dfdfd6;
 $dots-dark: darken($body-color-dark, 50%);
 
-$link-color-dark: $blue-300;
+$link-color-dark: #a8b1ff;
 $button-color-dark: $link-color-dark;
 $focus-color-dark: lighten($link-color-dark, 2.5%);
 
@@ -586,13 +586,6 @@ $navbar-dark-active-color:          $link-color-dark;
   border: 1px solid $body-overlay-dark;
 }
 
-[data-dark-mode] body .home-hero {
-  background:
-    linear-gradient(135deg, rgba($body-overlay-dark, 0.98), rgba($body-bg-dark, 0.98) 52%, rgba($blue-300, 0.08)),
-    linear-gradient(90deg, rgba($body-overlay-dark, 0.98), rgba($body-bg-dark, 0.96));
-  border-bottom: 1px solid $border-dark;
-}
-
 [data-dark-mode] body .home-hero .lead,
 [data-dark-mode] body .docs-list-lead,
 [data-dark-mode] body .docs-page-header .lead {
@@ -648,3 +641,280 @@ $navbar-dark-active-color:          $link-color-dark;
 [data-dark-mode] body .docs-link.active {
   box-shadow: inset 3px 0 0 $link-color-dark;
 }
+
+/* stylelint-disable no-duplicate-selectors, no-descending-specificity */
+[data-dark-mode] body {
+  background: #1b1b1f;
+  color: #dfdfd6;
+}
+
+[data-dark-mode] body .navbar,
+[data-dark-mode] body .doks-subnavbar {
+  background-color: rgba(27, 27, 31, 0.9);
+  border-bottom-color: #2e2e32;
+  backdrop-filter: blur(16px);
+}
+
+[data-dark-mode] body .navbar-light .navbar-brand {
+  color: #dfdfd6 !important;
+}
+
+[data-dark-mode] body .doks-navbar .nav-link {
+  color: #c7c7d1;
+}
+
+[data-dark-mode] body .doks-navbar .nav-link:hover,
+[data-dark-mode] body .doks-navbar .nav-link:focus,
+[data-dark-mode] body .doks-navbar .nav-link.active {
+  color: #a8b1ff;
+}
+
+[data-dark-mode] body .form-control.is-search {
+  color: #dfdfd6;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='17' viewBox='0 0 24 24' fill='none' stroke='%2398989f' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='11' cy='11' r='8'%3E%3C/circle%3E%3Cline x1='21' y1='21' x2='16.65' y2='16.65'%3E%3C/line%3E%3C/svg%3E")
+    no-repeat 0.95rem 50% / 1rem,
+    #202127;
+  border-color: #2e2e32;
+  box-shadow: none;
+}
+
+[data-dark-mode] body .form-control.is-search:focus {
+  border-color: #a8b1ff;
+  box-shadow: 0 0 0 3px rgba(168, 177, 255, 0.14);
+}
+
+[data-dark-mode] body .doks-navbar .social-link,
+[data-dark-mode] body #mode {
+  color: #dfdfd6;
+  background: transparent;
+  border-color: transparent;
+}
+
+[data-dark-mode] body .doks-navbar .social-link:hover,
+[data-dark-mode] body .doks-navbar .social-link:focus,
+[data-dark-mode] body #mode:hover,
+[data-dark-mode] body #mode:focus {
+  color: #a8b1ff;
+  background: rgba(168, 177, 255, 0.12);
+  border-color: rgba(168, 177, 255, 0.16);
+}
+
+[data-dark-mode] body.home {
+  background: #18191e;
+}
+
+[data-dark-mode] body.home .navbar {
+  background-color: rgba(24, 25, 30, 0.94);
+  border-bottom-color: rgba(46, 46, 50, 0.62);
+}
+
+[data-dark-mode] body.home .navbar-light .navbar-brand,
+[data-dark-mode] body.home .navbar-light .navbar-brand:hover,
+[data-dark-mode] body.home .navbar-light .navbar-brand:active {
+  color: #dfdfd6 !important;
+}
+
+[data-dark-mode] body.home .doks-navbar .nav-link,
+[data-dark-mode] body.home .navbar .btn-link,
+[data-dark-mode] body.home .btn-menu svg {
+  color: #c7c7d1;
+}
+
+[data-dark-mode] body.home .doks-navbar .nav-link:hover,
+[data-dark-mode] body.home .doks-navbar .nav-link:focus,
+[data-dark-mode] body.home .doks-navbar .nav-link.active,
+[data-dark-mode] body.home .navbar .btn-link:hover {
+  color: #a8b1ff;
+}
+
+[data-dark-mode] body .home .wrap,
+[data-dark-mode] body.home .wrap,
+[data-dark-mode] body.home .home-feature-band {
+  background: #18191e;
+}
+
+[data-dark-mode] body.home .home-hero {
+  color: #dfdfd6;
+  background: #18191e;
+  border-bottom-color: rgba(46, 46, 50, 0.62);
+}
+
+[data-dark-mode] body.home .home-title {
+  color: #f5f5ef;
+}
+
+[data-dark-mode] body.home .home-hero .lead {
+  color: #98989f;
+}
+
+[data-dark-mode] body.home .home-actions .btn-light {
+  color: #dfdfd6;
+  background: #32363f;
+  border-color: #32363f;
+}
+
+[data-dark-mode] body.home .home-hero .meta {
+  color: #7d7d86;
+}
+
+[data-dark-mode] body.home .home-hero .meta a,
+[data-dark-mode] body.home .home-feature p a {
+  color: #a8b1ff;
+}
+
+[data-dark-mode] body.home .home-feature {
+  color: #dfdfd6;
+  background: #202127;
+  border-color: #2a2b32;
+  box-shadow: none;
+}
+
+[data-dark-mode] body.home .home-feature:hover {
+  border-color: #3e63dd;
+  box-shadow: 0 1rem 2.5rem rgba(0, 0, 0, 0.18);
+}
+
+[data-dark-mode] body.home .home-feature-icon {
+  background: #2b2f38;
+}
+
+[data-dark-mode] body.home .home-feature h3 {
+  color: #dfdfd6;
+}
+
+[data-dark-mode] body.home .home-feature p {
+  color: #98989f;
+}
+
+[data-dark-mode] body.home .footer {
+  color: #98989f !important;
+  background: #18191e;
+  border-top-color: rgba(46, 46, 50, 0.62);
+}
+
+[data-dark-mode] body.home .footer a {
+  color: #c7c7d1 !important;
+}
+
+[data-dark-mode] body.home .footer-runtime {
+  color: #c7c7d1;
+  background: #202127;
+  border-color: #2a2b32;
+  box-shadow: none;
+}
+
+[data-dark-mode] body.home .footer-runtime-dot {
+  background: #a8b1ff;
+  box-shadow: 0 0 0 0.25rem rgba(168, 177, 255, 0.12);
+}
+
+[data-dark-mode] body .docs .wrap,
+[data-dark-mode] body.docs .wrap,
+[data-dark-mode] body.docs.list .wrap {
+  background: #1b1b1f;
+}
+
+@include media-breakpoint-up(lg) {
+  [data-dark-mode] body .docs .wrap,
+  [data-dark-mode] body.docs .wrap {
+    background:
+      linear-gradient(90deg, rgba(22, 22, 24, 0.78) 0 17rem, transparent 17rem),
+      #1b1b1f;
+  }
+}
+
+[data-dark-mode] body .docs-sidebar {
+  background: rgba(22, 22, 24, 0.78);
+  border-right-color: #2e2e32;
+}
+
+[data-dark-mode] body .docs-links .btn-toggle {
+  color: #dfdfd6;
+}
+
+[data-dark-mode] body .docs-links a.docs-link,
+[data-dark-mode] body .btn-toggle-nav a {
+  color: #98989f;
+}
+
+[data-dark-mode] body .docs-link:hover,
+[data-dark-mode] body .docs-link.active {
+  color: #a8b1ff;
+  background: rgba(168, 177, 255, 0.12);
+  box-shadow: none;
+}
+
+[data-dark-mode] body .docs-page-header,
+[data-dark-mode] body .docs-readable > h2,
+[data-dark-mode] body .docs-navigation {
+  border-color: #2e2e32;
+}
+
+[data-dark-mode] body .docs-page-header h1,
+[data-dark-mode] body .docs-list-header h1,
+[data-dark-mode] body .docs-readable > h2,
+[data-dark-mode] body .docs-readable > h3,
+[data-dark-mode] body .docs-readable > h4 {
+  color: #dfdfd6;
+}
+
+[data-dark-mode] body .docs-page-kicker,
+[data-dark-mode] body .docs-list-kicker {
+  color: #a8b1ff;
+}
+
+[data-dark-mode] body .docs-page-header .lead,
+[data-dark-mode] body .docs-list-lead,
+[data-dark-mode] body .docs-readable > p,
+[data-dark-mode] body .docs-readable li {
+  color: #c7c7d1;
+}
+
+[data-dark-mode] body .docs-readable a {
+  color: #a8b1ff;
+}
+
+[data-dark-mode] body .docs-readable code:not(.hljs) {
+  color: #a8b1ff;
+  background: rgba(168, 177, 255, 0.12);
+}
+
+[data-dark-mode] body .docs-readable pre {
+  border-color: #2e2e32;
+  box-shadow: none;
+}
+
+[data-dark-mode] body .docs-readable > blockquote,
+[data-dark-mode] body .docs-readable > .alert {
+  color: #c7c7d1;
+  background: #202127;
+  border-color: #2e2e32;
+  border-left-color: #a8b1ff;
+}
+
+[data-dark-mode] body .docs-readable > details,
+[data-dark-mode] body .docs-list-card,
+[data-dark-mode] body .docs-nav-card .card {
+  background: #202127;
+  border-color: #2e2e32;
+  box-shadow: none;
+}
+
+[data-dark-mode] body .page-links a {
+  color: #98989f;
+}
+
+[data-dark-mode] body .page-links a:hover,
+[data-dark-mode] body .page-links a:focus {
+  color: #a8b1ff;
+}
+
+[data-dark-mode] body .page-links {
+  border-color: #2e2e32;
+}
+
+[data-dark-mode] body .page-links h3 {
+  color: #dfdfd6;
+}
+/* stylelint-enable no-duplicate-selectors, no-descending-specificity */

@@ -1,5 +1,5 @@
 {{ define "main" }}
-	<div class="row flex-xl-nowrap">
+	<div class="row flex-xl-nowrap docs-layout{{ if ne .Params.toc false }} docs-layout-with-toc{{ else }} docs-layout-simple{{ end }}">
 		<div class="col-lg-5 col-xl-4 docs-sidebar{{ if ne .Site.Params.options.navbarSticky true }} docs-sidebar-top{{ end }} d-none d-lg-block">
 			<nav {{ if eq .Site.Params.menu.section.collapsibleSidebar false }}id="sidebar-default" {{ end }}class="docs-links" aria-label="Main navigation">
 				{{ partial "sidebar/docs-menu.html" . }}

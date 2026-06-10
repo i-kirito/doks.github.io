@@ -1,7 +1,7 @@
 ---
 title: "部署"
-description: "记录将本地 Hugo/Doks 项目推送到远程仓库并生成静态页面的基础流程。"
-lead: "把本地项目推送到远程仓库，并生成可发布的静态页面。"
+description: "记录将本地 Hugo/Doks 项目构建、提交并发布到线上站点的基础流程。"
+lead: "从本地构建到 GitHub 推送，再到线上站点验证的一条完整发布路径。"
 date: 2023-04-04T15:22:20+01:00
 lastmod: 2023-04-04T15:22:20+01:00
 draft: false
@@ -13,24 +13,55 @@ weight: 620
 toc: true
 ---
 
-## 推送到远程仓库
+## 发布前检查
 
-可以使用 [GitHub Desktop](https://desktop.github.com/) 推送，也可以直接用命令行完成。
-
-命令行流程如下：
+发布前先确认工作区里只有本次需要发布的改动：
 
 ```bash
-git init
+git status --short
+```
+
+如果改了样式、模板或 Markdown，建议先执行一次构建：
+
+```bash
+npm run build
+```
+
+构建成功后，`public/` 目录会生成静态页面。它代表本地构建结果，不等于线上已经更新。
+
+## 提交改动
+
+按本次变更范围生成提交：
+
+```bash
 git add .
-git commit -m "first commit"
-git remote add origin <your-repository-url>
+git commit -m "style: polish docs site"
+```
+
+如果只想提交部分文件，可以先用 `git diff --stat` 看改动范围，再精确 `git add`。
+
+## 推送远程
+
+推送到 GitHub：
+
+```bash
 git push -u origin main
 ```
 
-## 生成静态页面
+推送完成后，等待 GitHub Pages 或部署平台完成发布。
 
-部署前可以先在本地生成预览版本，确认页面能够正常构建。
+## 线上验证
 
-```bash
-npm run build:preview
+打开线上域名检查：
+
+```text
+https://doks.xazz.top/
 ```
+
+建议同时检查：
+
+- 首页是否加载新布局。
+- `/docs/` 文档索引是否正常。
+- 至少一个具体文档页是否能打开侧栏、目录和代码块。
+
+{{< alert icon="i" text="本地 public/ 构建成功只证明静态页面生成正常；线上是否更新，要以 https://doks.xazz.top/ 的实际访问结果为准。" />}}

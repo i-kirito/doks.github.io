@@ -1,8 +1,8 @@
 .footer {
   margin-top: auto;
   border-top: 1px solid $gray-200;
-  padding-top: 1.125rem;
-  padding-bottom: 1.125rem;
+  padding-top: 1.25rem;
+  padding-bottom: 1.25rem;
 }
 
 .footer ul {
@@ -14,15 +14,75 @@
   margin-bottom: 0;
 }
 
-#RunTime {
-  display: block;
-  width: 100%;
-  margin-top: 0.5rem;
-  color: #fc4e27;
-  font-size: $font-size-sm;
-  font-weight: 500;
-  line-height: 1.45;
+.footer-runtime-wrap {
+  flex: 0 0 100%;
+  max-width: 100%;
   text-align: center;
+}
+
+.footer-runtime {
+  display: inline-flex;
+  max-width: 100%;
+  align-items: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0.5rem 0.875rem;
+  color: $gray-700;
+  background: rgba($white, 0.72);
+  border: 1px solid $gray-200;
+  border-radius: 999px;
+  box-shadow: 0 0.5rem 1.5rem rgba($black, 0.04);
+}
+
+.footer-runtime-dot {
+  width: 0.45rem;
+  height: 0.45rem;
+  flex: 0 0 auto;
+  background: $primary;
+  border-radius: 999px;
+  box-shadow: 0 0 0 0.25rem rgba($primary, 0.12);
+}
+
+#RunTime {
+  color: inherit;
+  font-size: $font-size-sm;
+  font-weight: 600;
+  line-height: 1.45;
+  overflow-wrap: anywhere;
+}
+
+[data-dark-mode] body .footer-runtime {
+  color: #c7c7d1;
+  background: #202127;
+  border-color: #2e2e32;
+  box-shadow: none;
+}
+
+[data-dark-mode] body .footer-runtime-dot {
+  background: #a8b1ff;
+  box-shadow: 0 0 0 0.25rem rgba(168, 177, 255, 0.12);
+}
+
+body.home .footer {
+  color: #667085 !important;
+  background: #f7f8fb;
+  border-top-color: #e5e7eb;
+}
+
+body.home .footer a {
+  color: #495057 !important;
+}
+
+body.home .footer-runtime {
+  color: #495057;
+  background: #fff;
+  border-color: #e5e7eb;
+  box-shadow: 0 0.5rem 1.5rem rgba($black, 0.04);
+}
+
+body.home .footer-runtime-dot {
+  background: #3e63dd;
+  box-shadow: 0 0 0 0.25rem rgba(62, 99, 221, 0.12);
 }
 
 @include media-breakpoint-up(md) {
@@ -32,6 +92,16 @@
 }
 
 @include media-breakpoint-down(md) {
+  .footer {
+    text-align: center;
+  }
+
+  .footer-runtime {
+    width: 100%;
+    justify-content: center;
+    border-radius: 0.75rem;
+  }
+
   #RunTime {
     font-size: $font-size-sm * 0.92;
   }

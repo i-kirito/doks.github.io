@@ -1,45 +1,22 @@
 {{ define "main" }}
 <section class="home-hero section mt-n3">
   <div class="container-xxl">
-    <div class="row align-items-center justify-content-between g-4 g-xl-5">
-      <div class="col-lg-7 col-xl-6">
-        <p class="home-eyebrow">个人知识库</p>
+    <div class="home-hero-inner">
+      <div class="home-hero-copy">
+        <div class="home-badge">
+          <span>Docs</span>
+          <strong>个人知识库</strong>
+        </div>
         <h1 class="home-title mt-0">
           <span>小A猪崽</span>
-          <span class="home-title-divider">|</span>
           <span>有用的知识库</span>
         </h1>
         <p class="lead">{{ .Params.lead | safeHTML }}</p>
         <div class="home-actions">
           <a class="btn btn-primary btn-lg px-4" href="/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}help/start/" role="button">{{ i18n "get-started" }}</a>
-          <a class="btn btn-outline-primary btn-lg px-4" href="/docs/" role="button">浏览文档</a>
+          <a class="btn btn-light btn-lg px-4" href="/docs/" role="button">浏览文档</a>
         </div>
-        <p class="meta">个人知识库源码：<a href="https://github.com/i-kirito/doks.github.io">GitHub v{{ $data := getJSON "/package.json" }}{{ $data.version }}</a></p>
-      </div>
-      <div class="col-lg-5 col-xl-5">
-        <aside class="home-index-panel" aria-label="知识库概览">
-          <div class="home-index-header">
-            <img class="home-index-icon" src="/logo-doks.svg" alt="" width="36" height="36" loading="lazy">
-            <div>
-              <p class="home-index-kicker">快速进入</p>
-              <h2 class="h4">常用文档入口</h2>
-            </div>
-          </div>
-          <ol class="home-index-list">
-            <li>
-              <span class="home-index-number">01</span>
-              <a class="home-index-link" href="/docs/help/start/">文档站搭建</a>
-            </li>
-            <li class="home-index-divider">
-              <span class="home-index-number">02</span>
-              <a class="home-index-link" href="/docs/help/pull/">发布与部署</a>
-            </li>
-            <li class="home-index-divider">
-              <span class="home-index-number">03</span>
-              <a class="home-index-link" href="/docs/webstack/introduction/">导航站维护</a>
-            </li>
-          </ol>
-        </aside>
+        <p class="meta">源码：<a href="https://github.com/i-kirito/doks.github.io">GitHub v{{ $data := getJSON "/package.json" }}{{ $data.version }}</a></p>
       </div>
     </div>
   </div>
@@ -51,30 +28,33 @@
   <!-- 首页内容部分开始 -->
   <section class="home-feature-band section section-sm">
     <div class="container-xxl">
-      <div class="home-section-heading">
-        <p class="home-eyebrow">内容地图</p>
-        <h2>把常用流程放在顺手的位置</h2>
-      </div>
       <div class="home-feature-grid">
         <div>
           <article class="home-feature">
-            <span class="home-feature-kicker">文档</span>
+            <span class="home-feature-icon">📚</span>
             <h3 class="h4"><a href="/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}help/start/">文档站搭建</a></h3>
             <p>记录 Doks/Hugo 文档库的本地安装、启动和发布流程。</p>
           </article>
         </div>
         <div>
           <article class="home-feature home-feature-accent">
-            <span class="home-feature-kicker">导航</span>
+            <span class="home-feature-icon">🧭</span>
             <h3 class="h4"><a href="/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}webstack/introduction/">WebStack 开源</a></h3>
             <p>GitHub <a href="https://github.com/i-kirito/nav.github.io" target="_blank" rel="noopener">Hugo-WebStack</a> 是一款基于 Hugo 的导航站主题，点击标题查看搭建教程。</p>
           </article>
         </div>
         <div>
           <article class="home-feature home-feature-muted">
-            <span class="home-feature-kicker">笔记</span>
+            <span class="home-feature-icon">🧩</span>
             <h3 class="h4"><a href="/blog/">博客笔记</a></h3>
             <p>沉淀一些技术文章和日常折腾记录，方便以后回看。</p>
+          </article>
+        </div>
+        <div>
+          <article class="home-feature">
+            <span class="home-feature-icon">⚙️</span>
+            <h3 class="h4"><a href="/docs/help/pull/">发布部署</a></h3>
+            <p>记录从本地构建、预览到 GitHub Pages 发布的完整检查流程。</p>
           </article>
         </div>
       </div>

@@ -19,13 +19,40 @@ WebStack 是一类纯静态网址导航站方案，适合整理常用网站、�
 本站导航项目主要采用 Hugo 静态生成方案，方便托管到 GitHub Pages、Vercel
 等静态平台。
 
+本站对应的线上地址：
+
+- 导航站：[https://nav.xazz.top/](https://nav.xazz.top/)
+- 文档站：[https://doks.xazz.top/](https://doks.xazz.top/)
+
+## 为什么选择 Hugo
+
+Hugo 版本适合个人导航站，原因是维护链路短：
+
+- 网址数据可以直接放进仓库，变更历史清楚。
+- 静态生成速度快，适合 GitHub Pages 或 Vercel 托管。
+- 不需要数据库后台，迁移和备份都简单。
+- 能用脚本批量检测链接状态，减少失效入口。
+
+{{< alert icon="i" text="导航站的内容源和发布结果要分开检查：本地数据文件正确，不代表线上域名已经完成部署。" />}}
+
+## 日常维护对象
+
+| 对象 | 作用 | 维护重点 |
+|---|---|---|
+| 分类 | 决定首页分组 | 保持数量克制，避免分类过碎 |
+| 链接 | 每张导航卡片 | 标题清晰、URL 可访问、图标稳定 |
+| 状态点 | 标识在线状态 | 定期检测，异常链接及时修复 |
+| 静态输出 | 发布文件 | 构建成功后再推送发布 |
+
+## 参考项目
+
 参考过的开源项目：
 
 - [liutongxu/liutongxu.github.io](https://github.com/liutongxu/liutongxu.github.io)
 - [iplaycode/webstack-hugo](https://github.com/iplaycode/webstack-hugo)
 - [shenweiyan/WebStack-Hugo](https://github.com/shenweiyan/WebStack-Hugo)
 
-## 搭建方式
+## 常见实现方式
 
 WebStack 生态有多种实现方式。静态托管最轻量，适合个人导航站；带后台的
 WordPress、Laravel、Java 等版本更适合多人维护或需要在线管理的场景。
@@ -81,3 +108,8 @@ WordPress、Laravel、Java 等版本更适合多人维护或需要在线管理�
 主要参考教程：
 
 - [WebStack-Hugo | 一个静态响应式导航主题](https://www.yuque.com/shenweiyan/cookbook/webstack-hugo#RjR7K)
+
+## 下一步
+
+- 新增或调整链接时，优先阅读 [Vercel 部署](/docs/webstack/quick-start/)。
+- 调整视觉风格时，参考 [样式调整](/docs/webstack/style-css/)。

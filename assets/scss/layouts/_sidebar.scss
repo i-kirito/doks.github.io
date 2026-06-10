@@ -141,3 +141,64 @@ a.docs-link {
 .page-links h3.sidebar-link a:hover {
   text-decoration: underline;
 }
+
+/* stylelint-disable no-duplicate-selectors, no-descending-specificity */
+.docs-links {
+  padding: 1rem 1.25rem 5rem 0.25rem;
+}
+
+.collapsible-sidebar {
+  margin-top: 1rem;
+}
+
+.docs-links .btn-toggle {
+  width: 100%;
+  min-height: 2.25rem;
+  color: $gray-900;
+  font-size: $font-size-base * 0.92;
+  font-weight: 800;
+  text-transform: none;
+}
+
+.docs-links .btn-toggle::before {
+  margin-right: 0.25rem;
+}
+
+.docs-links .btn-toggle-nav {
+  margin-bottom: 1rem;
+}
+
+.docs-links a.docs-link,
+.btn-toggle-nav a {
+  display: flex;
+  min-height: 2rem;
+  align-items: center;
+  margin-left: 1.15rem;
+  padding: 0.35rem 0.75rem;
+  color: $gray-700;
+  border-radius: 999px !important;
+  font-size: $font-size-base * 0.92;
+  line-height: 1.3;
+}
+
+.docs-link:hover,
+.docs-link.active {
+  color: $primary;
+  background: rgba($primary, 0.09);
+}
+
+.docs-link.active {
+  box-shadow: none;
+  font-weight: 700;
+}
+
+.page-links {
+  padding-left: 1rem;
+  border-left: 1px solid $gray-200;
+}
+
+.page-links a {
+  color: $gray-600;
+  font-size: $font-size-sm;
+}
+/* stylelint-enable no-duplicate-selectors, no-descending-specificity */
