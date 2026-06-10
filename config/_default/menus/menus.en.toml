@@ -10,6 +10,12 @@
   identifier = "help"
   url = "/docs/help/"
 
+[[docs]]
+  name = "博客部署"
+  weight = 90
+  identifier = "halo"
+  url = "/docs/halo/"
+
 [[main]]
   name = "文档"
   url = "/docs/help/start/"

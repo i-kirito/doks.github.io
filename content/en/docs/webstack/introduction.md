@@ -1,9 +1,9 @@
 ---
-title: "WebStack 介绍"
-description: "整理 WebStack 及其 Hugo 相关实现的参考资料，并记录本站导航项目采用的搭建方向。"
-lead: "整理 WebStack 生态里常见的实现方式，并记录本站导航项目采用的搭建方向。"
+title: "导航站概览"
+description: "说明 nav.xazz.top 导航站的定位、数据结构、发布方式和维护原则。"
+lead: "个人导航站用于集中整理常用网站、工具入口和自建服务，重点是好找、可用、易维护。"
 date: 2023-04-04T08:48:57+00:00
-lastmod: 2023-04-04T08:48:57+00:00
+lastmod: 2026-06-10T16:20:00+08:00
 draft: false
 images: []
 menu:
@@ -13,103 +13,97 @@ weight: 100
 toc: true
 ---
 
-## 项目概览
+## 站点定位
 
-WebStack 是一类纯静态网址导航站方案，适合整理常用网站、工具入口和个人资源索引。
-本站导航项目主要采用 Hugo 静态生成方案，方便托管到 GitHub Pages、Vercel
-等静态平台。
+`nav.xazz.top` 是个人导航站，用来聚合常用入口：
 
-本站对应的线上地址：
+- 自建服务：博客、文档站、探针、AI 镜像等。
+- 编程学习：文档、教程、开发工具。
+- 素材资源：图标、图片、字体、设计素材。
+- 娱乐和生活：视频、游戏、工具站。
+- 最近热门工具：AI、前端、效率类站点。
 
-- 导航站：[https://nav.xazz.top/](https://nav.xazz.top/)
-- 文档站：[https://doks.xazz.top/](https://doks.xazz.top/)
+导航站适合做“入口”，不适合放太长教程。详细说明和维护流程放在 Doks 文档站。
 
-## 为什么选择 Hugo
+## 本地项目
 
-Hugo 版本适合个人导航站，原因是维护链路短：
+本地路径：
 
-- 网址数据可以直接放进仓库，变更历史清楚。
-- 静态生成速度快，适合 GitHub Pages 或 Vercel 托管。
-- 不需要数据库后台，迁移和备份都简单。
-- 能用脚本批量检测链接状态，减少失效入口。
+```text
+/Volumes/ikirito/Claude/hugo/nav.github.io
+```
 
-{{< alert icon="i" text="导航站的内容源和发布结果要分开检查：本地数据文件正确，不代表线上域名已经完成部署。" />}}
+公开地址：
 
-## 日常维护对象
+```text
+https://nav.xazz.top/
+```
 
-| 对象 | 作用 | 维护重点 |
-|---|---|---|
-| 分类 | 决定首页分组 | 保持数量克制，避免分类过碎 |
-| 链接 | 每张导航卡片 | 标题清晰、URL 可访问、图标稳定 |
-| 状态点 | 标识在线状态 | 定期检测，异常链接及时修复 |
-| 静态输出 | 发布文件 | 构建成功后再推送发布 |
+源码仓库：
 
-## 参考项目
+```text
+https://github.com/i-kirito/nav.github.io
+```
 
-参考过的开源项目：
+## 数据结构
 
-- [liutongxu/liutongxu.github.io](https://github.com/liutongxu/liutongxu.github.io)
-- [iplaycode/webstack-hugo](https://github.com/iplaycode/webstack-hugo)
-- [shenweiyan/WebStack-Hugo](https://github.com/shenweiyan/WebStack-Hugo)
+主要维护对象：
 
-## 常见实现方式
+| 文件 | 作用 |
+|---|---|
+| `data/webstack.yml` | 首页主体分类和网址 |
+| `data/friendlinks.yml` | 友情链接 |
+| `data/headers.yml` | 顶部导航 |
+| `data/link_status.yml` | 检测后的在线状态 |
+| `content/about.md` | 关于页面 |
+| `static/` | 图标、图片和静态资源 |
+| `docs/` | 构建后的发布目录 |
 
-WebStack 生态有多种实现方式。静态托管最轻量，适合个人导航站；带后台的
-WordPress、Laravel、Java 等版本更适合多人维护或需要在线管理的场景。
+`data/webstack.yml` 是最重要的内容源。每次新增、删除或调整网址，都应该优先改这里。
 
-{{< details "展开参考实现清单" >}}
+## 维护原则
 
-- **静态托管**：下载项目后修改数据文件，即可部署到静态托管平台。
+1. 先保持分类稳定，再扩展内容。
+2. 每个卡片只表达一个用途。
+3. 标题短，描述清楚。
+4. 图标稳定，不依赖容易失效的临时地址。
+5. 批量更新后必须跑链接检测。
+6. 本地构建和公开域名都要检查。
 
-- **WordPress 主题**：适合已经使用 WordPress 的站点。
-  源码：[owen0o0/WebStack](https://github.com/owen0o0/WebStack)。
+{{< alert icon="i" text="导航站最容易出问题的是链接失效、图标失效和公开站点未更新。每次发布都要分别检查数据、构建结果和线上域名。" />}}
 
-- **Laravel 后台系统**：适合需要后台管理的导航站。
-  源码：[hui-ho/WebStack-Laravel](https://github.com/hui-ho/WebStack-Laravel)，
-  Docker 镜像：[arvon2014/webstack-laravel](https://hub.docker.com/r/arvon2014/webstack-laravel)。
+## 状态点
 
-- **Hexo 主题**：适合 Hexo 用户。
-  源码：[HCLonely/hexo-theme-webstack](https://github.com/HCLonely/hexo-theme-webstack)。
+导航站卡片上的在线状态点来自 `data/link_status.yml`。
 
-- **Hugo 主题一**：本站主要参考方向。
-  源码：[shenweiyan/WebStack-Hugo](https://github.com/shenweiyan/WebStack-Hugo)，
-  教程：[WebStack-Hugo 静态响应式导航主题](https://www.yuque.com/shenweiyan/cookbook/webstack-hugo)。
+| 颜色 | 含义 |
+|---|---|
+| 绿色 | 检测正常 |
+| 红色 | 检测异常 |
 
-- **Hugo 主题二**：另一个 Hugo 实现。
-  源码：[iplaycode/webstack-hugo](https://github.com/iplaycode/webstack-hugo)，
-  演示：[iplaycode.github.io/nav](https://iplaycode.github.io/nav/)。
+检测脚本会同时收集 `webstack.yml`、`friendlinks.yml` 和 `headers.yml` 中的 URL。检测结果不是绝对真相，遇到登录墙、反爬、限流时需要人工复核。
 
-- **Java 后台系统**：源码 [jsnjfz/WebStack-Guns](https://github.com/jsnjfz/WebStack-Guns)。
+## 和文档站的分工
 
-- **Spring Boot 后台系统**：源码 [Nikati/WebStack-Guns-NKT](https://github.com/Nikati/WebStack-Guns-NKT)。
+| 站点 | 适合放什么 |
+|---|---|
+| 导航站 | 入口、链接、简短说明 |
+| 文档站 | 教程、命令、排障记录、维护流程 |
+| 博客 | 长文、折腾记录、公开文章 |
 
-- **Jekyll 版本**：源码 [0xl2oot/webstack-jekyll](https://github.com/0xl2oot/webstack-jekyll)。
+如果一个内容超过一两句话，就不适合塞进导航站卡片，应该写到文档站或博客。
 
-- **书签转换工具**：体验 [w.hanxi.info/convert.html](https://w.hanxi.info/convert.html)，
-  源码 [hanxi/webstack-jekyll](https://github.com/hanxi/webstack-jekyll)。
+## 常用流程
 
-- **Typecho 主题**：[钻芒二开版本](https://www.zmki.cn/5366.html)、
-  [SEOGO 二开版本](https://www.seogo.me/muban/webstack.html)。
+一次完整维护通常是：
 
-- **Gridea 主题**：源码 [lmm214/gridea-theme-webstack](https://github.com/lmm214/gridea-theme-webstack)，
-  演示 [edui.fun](https://edui.fun/)。
+```text
+修改 data/webstack.yml
+-> 运行 scripts/check_links.py
+-> Hugo 构建 docs/
+-> 本地检查页面
+-> git 提交推送
+-> 打开 nav.xazz.top 验证
+```
 
-- **Vue 版本**：源码 [Anjaxs/WebStack-vue](https://github.com/Anjaxs/WebStack-vue/tree/master)。
-
-- **Flask 版本**：源码 [shitianfang/flask-blog-platform](https://github.com/shitianfang/flask-blog-platform/tree/master)。
-
-{{< /details >}}
-
-## 本站采用方案
-
-本站导航站优先采用 Hugo 静态生成方案，维护成本低，部署速度快，也方便把网址数据
-放到仓库里进行版本管理。
-
-主要参考教程：
-
-- [WebStack-Hugo | 一个静态响应式导航主题](https://www.yuque.com/shenweiyan/cookbook/webstack-hugo#RjR7K)
-
-## 下一步
-
-- 新增或调整链接时，优先阅读 [Vercel 部署](/docs/webstack/quick-start/)。
-- 调整视觉风格时，参考 [样式调整](/docs/webstack/style-css/)。
+详细命令见 [导航站维护](/docs/webstack/quick-start/)。
