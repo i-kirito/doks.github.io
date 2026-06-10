@@ -7,7 +7,7 @@
 <h1 align="center">小A猪崽 | 有用的知识库</h1>
 
 <p align="center">
-  基于 Hugo + Doks 的文档站，用来整理文档站搭建流程、导航站维护方法、Halo2 部署教程和日常技术笔记。
+  基于 Hugo + Doks 的文档站，用来整理文档站搭建流程、导航站维护方法、AI 助手教程、Halo2 部署教程和日常技术笔记。
 </p>
 
 <p align="center">
@@ -16,6 +16,12 @@
   <a href="https://gohugo.io/">Hugo</a>
   ·
   <a href="https://docs.halo.run/">Halo</a>
+  ·
+  <a href="https://docs.astrbot.app/">AstrBot</a>
+  ·
+  <a href="https://docs.openclaw.ai/">OpenClaw</a>
+  ·
+  <a href="https://hermes-agent.nousresearch.com/docs/">Hermes</a>
 </p>
 
 ## 项目简介
@@ -27,6 +33,7 @@
 - Doks/Hugo 文档站的本地搭建和启动流程
 - 静态站点发布、部署和维护记录
 - WebStack-Hugo 导航站相关资料
+- AstrBot、OpenClaw、Hermes Agent 的安装、配置和排障教程
 - 后续技术笔记和折腾记录
 
 ## 本地开发
@@ -85,6 +92,9 @@ static/             favicon、logo、manifest 等静态资源
 - [Doks](https://getdoks.org/)
 - [WebStack-Hugo](https://github.com/shenweiyan/WebStack-Hugo)
 - [Halo](https://docs.halo.run/)
+- [AstrBot](https://docs.astrbot.app/)
+- [OpenClaw](https://docs.openclaw.ai/)
+- [Hermes Agent](https://hermes-agent.nousresearch.com/docs/)
 
 ## 许可
 

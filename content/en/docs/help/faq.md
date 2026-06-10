@@ -24,6 +24,12 @@ toc: true
 | Halo 文档 | [Halo Documentation](https://docs.halo.run/) |
 | Halo Docker Compose | [使用 Docker Compose 部署](https://docs.halo.run/getting-started/install/docker-compose) |
 | WebStack-Hugo | [shenweiyan/WebStack-Hugo](https://github.com/shenweiyan/WebStack-Hugo) |
+| AstrBot 文档 | [AstrBot Documentation](https://docs.astrbot.app/) |
+| AstrBot GitHub | [AstrBotDevs/AstrBot](https://github.com/AstrBotDevs/AstrBot) |
+| OpenClaw 文档 | [OpenClaw Documentation](https://docs.openclaw.ai/) |
+| OpenClaw GitHub | [openclaw/openclaw](https://github.com/openclaw/openclaw) |
+| Hermes Agent 文档 | [Hermes Documentation](https://hermes-agent.nousresearch.com/docs/) |
+| Hermes Agent GitHub | [NousResearch/Hermes-Agent](https://github.com/NousResearch/Hermes-Agent) |
 | Bootstrap 文档 | [Bootstrap Documentation](https://getbootstrap.com/docs/) |
 
 ## 常用命令
@@ -72,6 +78,7 @@ git diff --stat
 |---|---|
 | 导航站维护 | `content/en/docs/webstack/` |
 | 文档站维护 | `content/en/docs/help/` |
+| AI 助手教程 | `content/en/docs/ai/` |
 | Halo2 博客部署 | `content/en/docs/halo/` |
 | 公开长文 | `content/en/blog/` |
 | 首页入口 | `layouts/index.html` |

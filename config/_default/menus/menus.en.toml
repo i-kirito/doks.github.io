@@ -11,6 +11,12 @@
   url = "/docs/help/"
 
 [[docs]]
+  name = "AI 助手"
+  weight = 80
+  identifier = "ai"
+  url = "/docs/ai/"
+
+[[docs]]
   name = "博客部署"
   weight = 90
   identifier = "halo"
