@@ -1,5 +1,5 @@
 <p align="center">
-  <a href="https://doks.xazz.top/">
+  <a href="https://getdoks.org/">
     <img alt="小A猪崽知识库" src="static/logo-doks.svg" width="72">
   </a>
 </p>
@@ -7,20 +7,20 @@
 <h1 align="center">小A猪崽 | 有用的知识库</h1>
 
 <p align="center">
-  基于 Hugo + Doks 的个人知识库，用来整理常用操作、文档站搭建流程、导航站维护记录和日常技术笔记。
+  基于 Hugo + Doks 的文档站，用来整理文档站搭建流程、导航站维护方法、Halo2 部署教程和日常技术笔记。
 </p>
 
 <p align="center">
-  <a href="https://doks.xazz.top/">在线访问</a>
+  <a href="https://getdoks.org/">Doks</a>
   ·
-  <a href="https://github.com/i-kirito/doks.github.io">GitHub 仓库</a>
+  <a href="https://gohugo.io/">Hugo</a>
   ·
-  <a href="https://nav.xazz.top/">导航站</a>
+  <a href="https://docs.halo.run/">Halo</a>
 </p>
 
 ## 项目简介
 
-这个仓库是 [doks.xazz.top](https://doks.xazz.top/) 的源码，站点主要用于沉淀个人常用知识和维护说明。
+这个仓库是一个 Doks/Hugo 文档站示例，站点主要用于沉淀常用知识和维护说明。
 
 当前内容包括：
 
@@ -83,8 +83,8 @@ static/             favicon、logo、manifest 等静态资源
 
 - [Hugo](https://gohugo.io/)
 - [Doks](https://getdoks.org/)
-- [WebStack-Hugo 导航站源码](https://github.com/i-kirito/nav.github.io)
-- [小A猪崽导航站](https://nav.xazz.top/)
+- [WebStack-Hugo](https://github.com/shenweiyan/WebStack-Hugo)
+- [Halo](https://docs.halo.run/)
 
 ## 许可
 

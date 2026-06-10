@@ -1,7 +1,7 @@
 ---
 title: "文档站搭建"
-description: "记录 Doks/Hugo 文档站的本地环境、目录结构、内容编辑和预览方法。"
-lead: "从依赖安装到本地预览，快速启动 doks.xazz.top 这类 Doks/Hugo 文档站。"
+description: "基于 Doks 和 Hugo 官方文档整理文档站的本地环境、目录结构、内容编辑和预览方法。"
+lead: "从依赖安装到本地预览，快速启动一个通用的 Doks/Hugo 文档站。"
 date: 2020-11-12T13:26:54+01:00
 lastmod: 2026-06-10T16:20:00+08:00
 draft: false
@@ -15,25 +15,14 @@ toc: true
 
 {{< alert icon="i" text="本站使用 Node.js 管理前端依赖，并通过 Hugo 生成静态页面；日常维护优先使用 npm 脚本，避免不同 Hugo 版本混用。" />}}
 
-## 项目位置
+## 官方参考
 
-文档站本地项目：
+- [Doks Getting Started](https://getdoks.org/docs/start-here/getting-started/)
+- [Doks Project Structure](https://getdoks.org/docs/start-here/project-structure/)
+- [Hugo Quick Start](https://gohugo.io/getting-started/quick-start/)
+- [Hugo Directory Structure](https://gohugo.io/getting-started/directory-structure/)
 
-```text
-/Volumes/ikirito/Claude/hugo/doks.github.io
-```
-
-线上地址：
-
-```text
-https://doks.xazz.top/
-```
-
-源码仓库：
-
-```text
-https://github.com/i-kirito/doks.github.io
-```
+这类站点的核心思路是：用 Hugo 生成静态页面，用 Doks 提供文档主题、导航、搜索、短代码和样式体系。
 
 ## 适用场景
 
@@ -41,9 +30,9 @@ https://github.com/i-kirito/doks.github.io
 
 文档站主要负责沉淀三类内容：
 
-- 导航站 `nav.xazz.top` 的维护方法。
-- 文档站 `doks.xazz.top` 自己的搭建和发布方法。
-- Halo2 博客 `xazz.top` 的部署、运维和排障方法。
+- 导航站的维护方法。
+- 文档站自己的搭建和发布方法。
+- Halo2 博客的部署、运维和排障方法。
 
 ## 环境准备
 
@@ -65,7 +54,7 @@ git --version
 进入项目：
 
 ```bash
-cd /Volumes/ikirito/Claude/hugo/doks.github.io
+cd ~/projects/doks-site
 ```
 
 ## 安装依赖
@@ -85,7 +74,9 @@ npm install
 
 ## 启动本地服务
 
-默认启动：
+Doks 官方新项目通常使用 `npm run dev` 启动开发服务。维护已有项目时，优先查看 `package.json` 里的 `scripts`，按项目实际脚本执行。
+
+本项目常见默认启动：
 
 ```bash
 npm run start
@@ -101,7 +92,7 @@ npm run start -- --port 1324
 
 ```text
 http://localhost:1324/
-http://localhost:1324/docs/help/start/
+http://localhost:1324/docs/
 ```
 
 {{< details "端口被占用怎么办？" >}}

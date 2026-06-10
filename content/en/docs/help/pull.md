@@ -1,7 +1,7 @@
 ---
 title: "文档站发布"
-description: "记录 Doks/Hugo 文档站从本地检查、提交推送到线上验证的发布流程。"
-lead: "本地构建成功只是第一步，最终要以 GitHub 和 doks.xazz.top 的实际状态为准。"
+description: "基于 Hugo 官方部署文档整理 Doks/Hugo 文档站从本地检查到线上验证的发布流程。"
+lead: "本地构建成功只是第一步，最终要以 Git 远端、部署平台和公开域名的实际状态为准。"
 date: 2023-04-04T15:22:20+01:00
 lastmod: 2026-06-10T16:20:00+08:00
 draft: false
@@ -27,7 +27,13 @@ toc: true
 -> 线上验证
 ```
 
-{{< alert icon="i" text="不要把本地 public/ 构建成功当成线上已经更新。线上是否生效，要打开 https://doks.xazz.top/ 验证。" />}}
+{{< alert icon="i" text="不要把本地 public/ 构建成功当成线上已经更新。线上是否生效，要以部署平台和公开域名验证结果为准。" />}}
+
+## 官方参考
+
+- [Hugo Host and Deploy](https://gohugo.io/host-and-deploy/)
+- [Hugo Host on GitHub Pages](https://gohugo.io/host-and-deploy/host-on-github-pages/)
+- [Doks Deploy](https://getdoks.org/docs/recipes/deploy/)
 
 ## 确认改动范围
 
@@ -127,7 +133,7 @@ git rev-parse HEAD origin/main
 打开：
 
 ```text
-https://doks.xazz.top/
+https://docs.example.com/
 ```
 
 至少检查：
@@ -142,8 +148,8 @@ https://doks.xazz.top/
 命令检查：
 
 ```bash
-curl -I --max-time 10 https://doks.xazz.top/
-curl -I --max-time 10 https://doks.xazz.top/docs/halo/deployment/
+curl -I --max-time 10 https://docs.example.com/
+curl -I --max-time 10 https://docs.example.com/docs/halo/deployment/
 ```
 
 ## 发布后记录

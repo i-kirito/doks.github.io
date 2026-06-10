@@ -16,7 +16,7 @@
           <a class="btn btn-primary btn-lg px-4" href="/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}help/start/" role="button">{{ i18n "get-started" }}</a>
           <a class="btn btn-light btn-lg px-4" href="/docs/" role="button">浏览文档</a>
         </div>
-        <p class="meta">源码：<a href="https://github.com/i-kirito/doks.github.io">GitHub v{{ $data := getJSON "/package.json" }}{{ $data.version }}</a></p>
+        <p class="meta">参考：<a href="https://gohugo.io/">Hugo</a> · <a href="https://getdoks.org/">Doks</a></p>
       </div>
     </div>
   </div>
@@ -40,14 +40,14 @@
           <article class="home-feature home-feature-accent">
             <span class="home-feature-icon">🧭</span>
             <h3 class="h4"><a href="/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}webstack/introduction/">WebStack 开源</a></h3>
-            <p>GitHub <a href="https://github.com/i-kirito/nav.github.io" target="_blank" rel="noopener">Hugo-WebStack</a> 是一款基于 Hugo 的导航站主题，点击标题查看搭建教程。</p>
+            <p><a href="https://github.com/shenweiyan/WebStack-Hugo" target="_blank" rel="noopener">WebStack-Hugo</a> 是一款基于 Hugo 的静态响应式导航站主题。</p>
           </article>
         </div>
         <div>
           <article class="home-feature home-feature-muted">
             <span class="home-feature-icon">📝</span>
             <h3 class="h4"><a href="/docs/{{ if .Site.Params.options.docsVersioning }}{{ .Site.Params.docsVersion }}/{{ end }}halo/deployment/">Halo2 博客</a></h3>
-            <p>整理 xazz.top 的本机 Docker、NPS、ECS 和 Vercel 部署链路。</p>
+            <p>整理 Halo2 的 Docker Compose、数据备份、反向代理和公开入口检查方法。</p>
           </article>
         </div>
         <div>

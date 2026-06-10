@@ -8,7 +8,7 @@
   "browserslist": [
     "defaults"
   ],
-  "repository": "https://github.com/i-kirito/doks.github.io",
+  "repository": "https://github.com/thuliteio/doks",
   "license": "MIT",
   "publishConfig": {
     "access": "public"

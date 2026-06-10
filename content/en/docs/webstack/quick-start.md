@@ -1,6 +1,6 @@
 ---
 title: "导航站维护"
-description: "记录 nav.xazz.top 导航站的内容维护、链接检测、本地构建和线上发布流程。"
+description: "记录 WebStack-Hugo 导航站的内容维护、链接检测、本地构建和线上发布流程。"
 lead: "从修改导航数据到检查在线状态，再到构建和验证公开域名的一套常用流程。"
 date: 2020-11-16T13:59:39+01:00
 lastmod: 2026-06-10T16:20:00+08:00
@@ -13,18 +13,18 @@ weight: 110
 toc: true
 ---
 
-## 项目位置
+## 项目准备
 
-导航站本地项目：
+示例项目目录：
 
 ```text
-/Volumes/ikirito/Claude/hugo/nav.github.io
+~/projects/nav-site
 ```
 
-线上地址：
+示例公开地址：
 
 ```text
-https://nav.xazz.top/
+https://nav.example.com/
 ```
 
 常用入口：
@@ -77,7 +77,7 @@ https://nav.xazz.top/
 进入项目目录：
 
 ```bash
-cd /Volumes/ikirito/Claude/hugo/nav.github.io
+cd ~/projects/nav-site
 ```
 
 运行检测脚本：
@@ -150,7 +150,7 @@ git push origin main
 本地构建成功不代表线上已经更新。推送后打开：
 
 ```text
-https://nav.xazz.top/
+https://nav.example.com/
 ```
 
 检查项：
@@ -164,7 +164,7 @@ https://nav.xazz.top/
 可以用命令确认公开站点响应：
 
 ```bash
-curl -I --max-time 10 https://nav.xazz.top/
+curl -I --max-time 10 https://nav.example.com/
 ```
 
 ## 常见维护动作

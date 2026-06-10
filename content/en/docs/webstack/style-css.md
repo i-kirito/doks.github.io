@@ -83,7 +83,7 @@ logo: "https://www.google.com/s2/favicons?sz=64&domain=example.com"
 3. 图标加载失败时的占位效果。
 4. 状态点显示。
 5. 手机宽度。
-6. 公开域名 `https://nav.xazz.top/`。
+6. 公开域名 `https://nav.example.com/`。
 
 ## 常见问题
 

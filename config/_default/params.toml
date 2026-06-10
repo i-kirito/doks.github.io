@@ -14,21 +14,21 @@ home = "首页"
 ## Open Graph
 images = ["doks.png"]
 ogLocale = "zh-CN"
-domainTLD = "doks.xazz.top"
+domainTLD = "example.com"
 titleHome = "小A猪崽知识库"
 
 ## Twitter Cards
-twitterSite = "@ikiritoxx"
-twitterCreator = "@ikiritoxx"
+twitterSite = ""
+twitterCreator = ""
 
 ## JSON-LD
 # schemaType = "Person"
 schemaType = "Person"
 schemaName = "小A猪崽"
 schemaAuthor = "ikirito"
-schemaAuthorTwitter = "https://twitter.com/ikiritoxx"
+schemaAuthorTwitter = ""
 schemaAuthorLinkedIn = ""
-schemaAuthorGitHub = "https://github.com/i-kirito"
+schemaAuthorGitHub = ""
 schemaLocale = "zh-CN"
 schemaLogo = "logo-doks.png"
 schemaLogoWidth = 512
@@ -36,9 +36,9 @@ schemaLogoHeight = 512
 schemaImage = "doks.png"
 schemaImageWidth = 1280
 schemaImageHeight = 640
-schemaTwitter = "https://twitter.com/ikiritoxx"
+schemaTwitter = ""
 schemaLinkedIn = ""
-schemaGitHub = "https://github.com/i-kirito"
+schemaGitHub = ""
 schemaSection = "blog"
 
 ## Sitelinks Search Box
@@ -67,10 +67,10 @@ defaultImage = "default-image.png" # put in `./assets/images/`
 fillImage = "1270x740 Center" # normalize image size
 
 # Footer
-footer = "Powered by <a class=\"text-muted\" href=\"https://github.com/i-kirito/\">GitHub</a>, <a class=\"text-muted\" href=\"https://gohugo.io/\">Hugo</a>, and <a class=\"text-muted\" href=\"https://getdoks.org/\">Doks</a>"
+footer = "Powered by <a class=\"text-muted\" href=\"https://gohugo.io/\">Hugo</a> and <a class=\"text-muted\" href=\"https://getdoks.org/\">Doks</a>"
 
 # Feed
-copyRight = "Copyright (c) 2023-2026 ikirito"
+copyRight = "Copyright (c) 2023-2026"
 
 # Alert
 alert = false
@@ -81,7 +81,7 @@ alertText = "知识库内容持续整理中，常用文档会优先放到首页�
 # repoHost [Github | Gitea | GitLab | Bitbucket | BitbucketServer ] is used for building the edit link based on git hoster
 repoHost = "GitHub"
 #repoHost = "Gitea"
-docsRepo = "https://github.com/i-kirito/doks.github.io"
+docsRepo = "https://github.com/thuliteio/doks"
 docsRepoBranch = "main"
 docsRepoSubPath = ""
 editPage = false

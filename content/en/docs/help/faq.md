@@ -17,13 +17,13 @@ toc: true
 
 | 名称 | 地址 |
 |---|---|
-| 线上文档站 | [https://doks.xazz.top/](https://doks.xazz.top/) |
-| 线上导航站 | [https://nav.xazz.top/](https://nav.xazz.top/) |
-| 线上博客 | [https://xazz.top/](https://xazz.top/) |
-| 文档站仓库 | [i-kirito/doks.github.io](https://github.com/i-kirito/doks.github.io) |
-| 导航站仓库 | [i-kirito/nav.github.io](https://github.com/i-kirito/nav.github.io) |
 | Hugo 文档 | [Hugo Documentation](https://gohugo.io/documentation/) |
+| Hugo GitHub Pages 部署 | [Host on GitHub Pages](https://gohugo.io/host-and-deploy/host-on-github-pages/) |
 | Doks 文档 | [Doks Documentation](https://getdoks.org/) |
+| Doks 快速开始 | [Doks Getting Started](https://getdoks.org/docs/start-here/getting-started/) |
+| Halo 文档 | [Halo Documentation](https://docs.halo.run/) |
+| Halo Docker Compose | [使用 Docker Compose 部署](https://docs.halo.run/getting-started/install/docker-compose) |
+| WebStack-Hugo | [shenweiyan/WebStack-Hugo](https://github.com/shenweiyan/WebStack-Hugo) |
 | Bootstrap 文档 | [Bootstrap Documentation](https://getbootstrap.com/docs/) |
 
 ## 常用命令
@@ -31,7 +31,7 @@ toc: true
 进入项目：
 
 ```bash
-cd /Volumes/ikirito/Claude/hugo/doks.github.io
+cd ~/projects/doks-site
 ```
 
 启动本地服务：
@@ -160,8 +160,8 @@ npm run build
 
 | 站点 | 作用 |
 |---|---|
-| `nav.xazz.top` | 常用入口和资源导航 |
-| `doks.xazz.top` | 教程、命令、部署和排障手册 |
-| `xazz.top` | 对外博客文章和长期内容 |
+| 导航站 | 常用入口和资源导航 |
+| 文档站 | 教程、命令、部署和排障手册 |
+| 博客站 | 对外博客文章和长期内容 |
 
 简单入口放导航站，操作流程放文档站，完整文章放博客。

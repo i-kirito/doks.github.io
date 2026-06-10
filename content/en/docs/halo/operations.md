@@ -18,7 +18,7 @@ toc: true
 所有命令默认在部署目录中执行：
 
 ```bash
-cd /Volumes/ikirito/docker/halo2
+cd ~/halo
 ```
 
 ## 查看状态
@@ -32,7 +32,7 @@ docker compose ps
 查看资源占用：
 
 ```bash
-docker stats halo-local halodb-local
+docker stats
 ```
 
 查看最近日志：
@@ -79,29 +79,36 @@ docker compose up -d
 备份数据库前先创建备份目录：
 
 ```bash
-mkdir -p mysqlBackup
+mkdir -p backups
 ```
 
-导出 SQL：
+如果使用 MySQL，可以导出 SQL：
 
 ```bash
-docker compose exec halodb sh -c 'mysqldump -uroot -p"$MYSQL_ROOT_PASSWORD" halo' \
-  > mysqlBackup/halo_backup_$(date +%Y%m%d_%H%M%S).sql
+docker compose exec halodb sh -c 'mysqldump -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" halo' \
+  > backups/halo_mysql_$(date +%Y%m%d_%H%M%S).sql
+```
+
+如果使用 PostgreSQL，可以导出 dump：
+
+```bash
+docker compose exec halodb sh -c 'pg_dump -U "$POSTGRES_USER" "$POSTGRES_DB"' \
+  > backups/halo_postgres_$(date +%Y%m%d_%H%M%S).sql
 ```
 
 压缩备份：
 
 ```bash
-gzip mysqlBackup/halo_backup_*.sql
+gzip backups/halo_*_*.sql
 ```
 
 备份 Halo 应用数据目录：
 
 ```bash
-tar -czf backups/halo2_data_$(date +%Y%m%d_%H%M%S).tar.gz halo2
+tar -czf backups/halo_data_$(date +%Y%m%d_%H%M%S).tar.gz halo2
 ```
 
-{{< alert icon="i" text="数据库目录 mysql/ 和应用数据 halo2/ 都是运行时数据，不能当普通源码提交；备份包也应放在私有归档位置。" />}}
+{{< alert icon="i" text="数据库目录和 Halo 数据目录都是运行时数据，不能当普通源码提交；备份包也应放在私有归档位置。" />}}
 
 ## 恢复数据
 
@@ -114,8 +121,8 @@ docker compose stop halo
 导入 SQL：
 
 ```bash
-docker compose exec -T halodb sh -c 'mysql -uroot -p"$MYSQL_ROOT_PASSWORD" halo' \
-  < mysqlBackup/halo_backup_YYYYMMDD_HHMMSS.sql
+docker compose exec -T halodb sh -c 'mysql -u"$MYSQL_USER" -p"$MYSQL_PASSWORD" halo' \
+  < backups/halo_mysql_YYYYMMDD_HHMMSS.sql
 ```
 
 恢复后启动 Halo：
@@ -127,12 +134,12 @@ docker compose start halo
 再检查健康状态：
 
 ```bash
-curl -fsS http://localhost:18090/actuator/health/readiness
+curl -I --max-time 10 http://127.0.0.1:8090/
 ```
 
 ## 更新镜像
 
-更新前先备份数据库和 `halo2/` 数据目录。确认备份完成后：
+更新前先备份数据库和 Halo 数据目录。确认备份完成后：
 
 ```bash
 docker compose pull
@@ -143,18 +150,18 @@ docker compose up -d
 
 ```bash
 docker compose logs --tail=120 halo
-curl -fsS http://localhost:18090/actuator/health/readiness
+curl -I --max-time 10 http://127.0.0.1:8090/
 ```
 
-## 防止本机休眠
+## 公开入口检查
 
-如果本机作为服务源，维护窗口内可以临时防休眠：
+如果配置了域名或反向代理，检查公开入口：
 
 ```bash
-caffeinate -dimsu
+curl -I --max-time 10 https://blog.example.com/
 ```
 
-结束维护后按 `Ctrl+C` 停止。
+确认状态码、证书和页面内容都符合预期。
 
 ## 发布后巡检
 
@@ -162,10 +169,8 @@ caffeinate -dimsu
 
 ```bash
 docker compose ps
-curl -fsS http://localhost:18090/actuator/health/readiness
-curl -I --max-time 10 http://127.0.0.1:18090/
-curl -I --max-time 10 http://8.134.251.200:8090/
-curl -I --max-time 10 https://xazz.top/
+curl -I --max-time 10 http://127.0.0.1:8090/
+curl -I --max-time 10 https://blog.example.com/
 ```
 
-如果公开域名异常，但前两步正常，继续看 NPS、ECS/Nginx 或 Vercel。
+如果公开域名异常，但本机端口正常，继续看反向代理、DNS、证书或 CDN。

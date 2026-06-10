@@ -1,6 +1,6 @@
 ---
 title: "导航站概览"
-description: "说明 nav.xazz.top 导航站的定位、数据结构、发布方式和维护原则。"
+description: "说明 WebStack-Hugo 导航站的定位、数据结构、发布方式和维护原则。"
 lead: "个人导航站用于集中整理常用网站、工具入口和自建服务，重点是好找、可用、易维护。"
 date: 2023-04-04T08:48:57+00:00
 lastmod: 2026-06-10T16:20:00+08:00
@@ -15,7 +15,7 @@ toc: true
 
 ## 站点定位
 
-`nav.xazz.top` 是个人导航站，用来聚合常用入口：
+WebStack-Hugo 导航站用来聚合常用入口：
 
 - 自建服务：博客、文档站、探针、AI 镜像等。
 - 编程学习：文档、教程、开发工具。
@@ -25,25 +25,13 @@ toc: true
 
 导航站适合做“入口”，不适合放太长教程。详细说明和维护流程放在 Doks 文档站。
 
-## 本地项目
+## 官方参考
 
-本地路径：
+- [WebStack-Hugo](https://github.com/shenweiyan/WebStack-Hugo)
+- [Hugo Quick Start](https://gohugo.io/getting-started/quick-start/)
+- [Hugo Content Management](https://gohugo.io/content-management/)
 
-```text
-/Volumes/ikirito/Claude/hugo/nav.github.io
-```
-
-公开地址：
-
-```text
-https://nav.xazz.top/
-```
-
-源码仓库：
-
-```text
-https://github.com/i-kirito/nav.github.io
-```
+WebStack-Hugo 是基于 Hugo 的导航站主题，内容通常通过数据文件维护，再由 Hugo 生成静态页面。
 
 ## 数据结构
 
@@ -103,7 +91,7 @@ https://github.com/i-kirito/nav.github.io
 -> Hugo 构建 docs/
 -> 本地检查页面
 -> git 提交推送
--> 打开 nav.xazz.top 验证
+-> 打开 https://nav.example.com/ 验证
 ```
 
 详细命令见 [导航站维护](/docs/webstack/quick-start/)。
