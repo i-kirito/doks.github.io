@@ -80,8 +80,15 @@
           <header class="docs-list-header text-center">
             <p class="docs-list-kicker">文档索引</p>
             <h1>{{ .Title }}</h1>
-            {{ with .Content -}}<div class="docs-list-lead">{{ . }}</div>{{ end -}}
+            {{ with (or .Params.lead .Params.description) -}}
+              <p class="docs-list-lead">{{ . }}</p>
+            {{ end -}}
           </header>
+          {{ with .Content -}}
+            <div class="docs-section-content docs-readable">
+              {{ . }}
+            </div>
+          {{ end -}}
           <div class="docs-hub-grid docs-section-grid">
             {{ $currentSection := .CurrentSection }}
             {{ range where .Site.RegularPages.ByTitle "Section" .Section }}

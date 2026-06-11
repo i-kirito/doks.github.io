@@ -933,6 +933,20 @@ body.home {
   margin-top: 1.5rem;
 }
 
+.docs-section-content {
+  max-width: 48rem;
+  margin: 0 auto 2rem;
+  padding: 1.25rem 1.5rem;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid #e5e7eb;
+  border-radius: 0.9rem;
+}
+
+.docs-section-content > :last-child {
+  margin-bottom: 0;
+}
+
 .docs-hub-card {
   display: flex;
   min-height: 10.5rem;
