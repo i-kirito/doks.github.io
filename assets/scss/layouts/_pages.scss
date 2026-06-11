@@ -928,6 +928,11 @@ body.home {
   gap: 0.9rem;
 }
 
+.docs-section-grid {
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  margin-top: 1.5rem;
+}
+
 .docs-hub-card {
   display: flex;
   min-height: 10.5rem;
@@ -941,6 +946,10 @@ body.home {
   border: 1px solid #e5e7eb;
   border-radius: 0.8rem;
   transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.docs-section-card {
+  min-height: 11.5rem;
 }
 
 .docs-hub-card:hover,
@@ -1153,6 +1162,10 @@ body.home {
 
   .docs-hub-card {
     min-height: auto;
+  }
+
+  .docs-section-grid {
+    margin-top: 1.25rem;
   }
 
   .docs-content {

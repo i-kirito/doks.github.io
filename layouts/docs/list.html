@@ -72,6 +72,8 @@
       </div>
     </div>
   {{ else -}}
+    {{ $icons := dict "导航站" "🧭" "文档库" "📚" "Docker" "📦" "AI 助手" "🤖" "博客部署" "📝" -}}
+    {{ $sectionIcon := or (index $icons .Title) "📄" -}}
     <div class="docs-list-page row justify-content-center">
       <div class="col-md-12 col-lg-12 col-xl-12">
         <article>
@@ -80,19 +82,24 @@
             <h1>{{ .Title }}</h1>
             {{ with .Content -}}<div class="docs-list-lead">{{ . }}</div>{{ end -}}
           </header>
-          <div class="card-list docs-list-grid">
+          <div class="docs-hub-grid docs-section-grid">
             {{ $currentSection := .CurrentSection }}
             {{ range where .Site.RegularPages.ByTitle "Section" .Section }}
               {{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
-                <article class="docs-list-card">
-                  <p class="docs-list-card-meta">{{ .Parent.Title }}</p>
-                  <h2 class="h4"><a class="stretched-link" href="{{ .RelPermalink }}">{{ .Params.title | title }}</a></h2>
-                  {{ with .Params.description -}}
-                    <p>{{ . }}</p>
-                  {{ else -}}
-                    {{ with .Params.lead -}}<p>{{ . | safeHTML }}</p>{{ end -}}
-                  {{ end -}}
-                </article>
+                <a class="docs-hub-card docs-section-card" href="{{ .RelPermalink }}">
+                  <span class="docs-hub-card-icon" aria-hidden="true">{{ $sectionIcon }}</span>
+                  <span class="docs-hub-card-body">
+                    <span class="docs-hub-card-title">{{ .Title }}</span>
+                    <span class="docs-hub-card-desc">
+                      {{- with .Params.description -}}
+                        {{ . | plainify }}
+                      {{- else -}}
+                        {{ with .Params.lead }}{{ . | plainify }}{{ end }}
+                      {{- end -}}
+                    </span>
+                    <span class="docs-hub-card-meta">{{ .Parent.Title }} · 阅读文档</span>
+                  </span>
+                </a>
               {{ end }}
             {{ end }}
           </div>
