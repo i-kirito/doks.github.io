@@ -1,29 +1,103 @@
 {{ define "main" }}
-<div class="docs-list-page row justify-content-center">
-  <div class="col-md-12 col-lg-12 col-xl-12">
-    <article>
-      <header class="docs-list-header text-center">
-        <p class="docs-list-kicker">文档索引</p>
-        <h1>{{ .Title }}</h1>
-        {{ with .Content -}}<div class="docs-list-lead">{{ . }}</div>{{ end -}}
-      </header>
-			<div class="card-list docs-list-grid">
-				{{ $currentSection := .CurrentSection }}
-				{{ range where .Site.RegularPages.ByTitle "Section" .Section }}
-					{{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
-						<article class="docs-list-card">
-              <p class="docs-list-card-meta">{{ .Parent.Title }}</p>
-              <h2 class="h4"><a class="stretched-link" href="{{ .RelPermalink }}">{{ .Params.title | title }}</a></h2>
-              {{ with .Params.description -}}
-                <p>{{ . }}</p>
-              {{ else -}}
-                {{ with .Params.lead -}}<p>{{ . | safeHTML }}</p>{{ end -}}
+  {{ if eq .RelPermalink "/docs/" -}}
+    {{ $sections := .Sections.ByWeight -}}
+    {{ $docsPages := where .Site.RegularPages.ByWeight "Section" .Section -}}
+    {{ $icons := dict "导航站" "🧭" "文档库" "📚" "Docker" "📦" "AI 助手" "🤖" "博客部署" "📝" -}}
+    <div class="docs-list-page docs-hub-page row justify-content-center">
+      <div class="col-md-12 col-lg-12 col-xl-12">
+        <article>
+          <header class="docs-list-header docs-hub-header">
+            <div>
+              <p class="docs-list-kicker">文档索引</p>
+              <h1>{{ .Title }}</h1>
+              {{ with .Content -}}<div class="docs-list-lead">{{ . }}</div>{{ end -}}
+            </div>
+            <div class="docs-hub-metrics" aria-label="文档概览">
+              <span>{{ len $sections }} 个栏目</span>
+              <span>{{ len $docsPages }} 篇文档</span>
+            </div>
+          </header>
+
+          <section class="docs-hub-section" aria-labelledby="docs-hub-sections-title">
+            <div class="docs-hub-section-heading">
+              <p class="docs-list-kicker">快速进入</p>
+              <h2 id="docs-hub-sections-title">按主题浏览</h2>
+            </div>
+            <div class="docs-hub-grid">
+              {{ range $sections -}}
+                {{ $pages := .RegularPages.ByWeight -}}
+                <a class="docs-hub-card" href="{{ .RelPermalink }}">
+                  <span class="docs-hub-card-icon" aria-hidden="true">{{ or (index $icons .Title) "📄" }}</span>
+                  <span class="docs-hub-card-body">
+                    <span class="docs-hub-card-title">{{ .Title }}</span>
+                    <span class="docs-hub-card-desc">{{ with .Params.lead }}{{ . | plainify }}{{ else }}{{ .Params.description }}{{ end }}</span>
+                    <span class="docs-hub-card-meta">{{ len $pages }} 篇文档</span>
+                  </span>
+                </a>
               {{ end -}}
-						</article>
-					{{ end }}
-				{{ end }}
-			</div>
-    </article>
-  </div>
-</div>
+            </div>
+          </section>
+
+          <section class="docs-hub-section" aria-labelledby="docs-hub-all-title">
+            <div class="docs-hub-section-heading">
+              <p class="docs-list-kicker">全部内容</p>
+              <h2 id="docs-hub-all-title">文档清单</h2>
+            </div>
+            <div class="docs-topic-list">
+              {{ range $sections -}}
+                {{ $pages := .RegularPages.ByWeight -}}
+                <section class="docs-topic">
+                  <header class="docs-topic-header">
+                    <span class="docs-topic-icon" aria-hidden="true">{{ or (index $icons .Title) "📄" }}</span>
+                    <div>
+                      <h3>{{ .Title }}</h3>
+                      <p>{{ len $pages }} 篇文档</p>
+                    </div>
+                  </header>
+                  <div class="docs-topic-links">
+                    {{ range $pages -}}
+                      <a class="docs-topic-link" href="{{ .RelPermalink }}">
+                        <span>
+                          <strong>{{ .Title }}</strong>
+                          {{ with .Params.description -}}<em>{{ . }}</em>{{ end -}}
+                        </span>
+                      </a>
+                    {{ end -}}
+                  </div>
+                </section>
+              {{ end -}}
+            </div>
+          </section>
+        </article>
+      </div>
+    </div>
+  {{ else -}}
+    <div class="docs-list-page row justify-content-center">
+      <div class="col-md-12 col-lg-12 col-xl-12">
+        <article>
+          <header class="docs-list-header text-center">
+            <p class="docs-list-kicker">文档索引</p>
+            <h1>{{ .Title }}</h1>
+            {{ with .Content -}}<div class="docs-list-lead">{{ . }}</div>{{ end -}}
+          </header>
+          <div class="card-list docs-list-grid">
+            {{ $currentSection := .CurrentSection }}
+            {{ range where .Site.RegularPages.ByTitle "Section" .Section }}
+              {{ if in (.RelPermalink | string) $currentSection.RelPermalink }}
+                <article class="docs-list-card">
+                  <p class="docs-list-card-meta">{{ .Parent.Title }}</p>
+                  <h2 class="h4"><a class="stretched-link" href="{{ .RelPermalink }}">{{ .Params.title | title }}</a></h2>
+                  {{ with .Params.description -}}
+                    <p>{{ . }}</p>
+                  {{ else -}}
+                    {{ with .Params.lead -}}<p>{{ . | safeHTML }}</p>{{ end -}}
+                  {{ end -}}
+                </article>
+              {{ end }}
+            {{ end }}
+          </div>
+        </article>
+      </div>
+    </div>
+  {{ end -}}
 {{ end }}
