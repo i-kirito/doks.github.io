@@ -21,6 +21,9 @@ toc: true
 | Hugo GitHub Pages 部署 | [Host on GitHub Pages](https://gohugo.io/host-and-deploy/host-on-github-pages/) |
 | Doks 文档 | [Doks Documentation](https://getdoks.org/) |
 | Doks 快速开始 | [Doks Getting Started](https://getdoks.org/docs/start-here/getting-started/) |
+| Docker 文档 | [Docker Docs](https://docs.docker.com/) |
+| Docker CLI | [Docker CLI reference](https://docs.docker.com/reference/cli/docker/) |
+| Docker Compose | [Docker Compose reference](https://docs.docker.com/reference/cli/docker/compose/) |
 | Halo 文档 | [Halo Documentation](https://docs.halo.run/) |
 | Halo Docker Compose | [使用 Docker Compose 部署](https://docs.halo.run/getting-started/install/docker-compose) |
 | WebStack-Hugo | [shenweiyan/WebStack-Hugo](https://github.com/shenweiyan/WebStack-Hugo) |
@@ -78,6 +81,7 @@ git diff --stat
 |---|---|
 | 导航站维护 | `content/en/docs/webstack/` |
 | 文档站维护 | `content/en/docs/help/` |
+| Docker 教程 | `content/en/docs/docker/` |
 | AI 助手教程 | `content/en/docs/ai/` |
 | Halo2 博客部署 | `content/en/docs/halo/` |
 | 公开长文 | `content/en/blog/` |
