@@ -167,9 +167,17 @@ body.blog.list .content {
 }
 
 .blog-profile-actions .btn {
+  display: inline-flex;
+  flex: 0 0 7.8rem;
+  align-items: center;
+  justify-content: center;
   min-height: 2.7rem;
+  padding-right: 1rem;
+  padding-left: 1rem;
   border-radius: 0.7rem;
   font-weight: 800;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .blog-profile-stats {
@@ -309,11 +317,7 @@ body.blog.list .content {
   line-height: 1.6;
 }
 
-@include media-breakpoint-down(md) {
-  .blog-profile-page {
-    padding-top: 2.25rem;
-  }
-
+@include media-breakpoint-down(lg) {
   .blog-profile-hero {
     grid-template-columns: 1fr;
     text-align: center;
@@ -322,6 +326,12 @@ body.blog.list .content {
   .blog-profile-avatar-wrap {
     width: max-content;
     margin: 0 auto;
+  }
+}
+
+@include media-breakpoint-down(md) {
+  .blog-profile-page {
+    padding-top: 2.25rem;
   }
 
   .blog-profile-stats,
