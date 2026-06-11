@@ -1,5 +1,5 @@
 ---
-title: "ikirito - Mr.Liang 👋"
+title: "ikirito"
 description: "个人博客与技术笔记，记录一些文章、折腾过程和生活感悟。"
 lead: "看这里！很高兴遇见你，这里是我的个人主页，欢迎来访。"
 excerpt: ""
