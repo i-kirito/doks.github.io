@@ -1,0 +1,103 @@
+{{ define "main" }}
+{{ $posts := .Pages.ByDate.Reverse -}}
+<section class="blog-profile-page">
+  <div class="blog-profile-hero">
+    <div class="blog-profile-avatar-wrap">
+      <img class="blog-profile-avatar" src="https://avatars.githubusercontent.com/u/79130542?v=4" alt="Mr.Liang GitHub avatar" width="128" height="128" loading="eager">
+    </div>
+    <div class="blog-profile-copy">
+      <p class="blog-profile-kicker">GitHub Profile / Personal Blog</p>
+      <h1>{{ .Title }}</h1>
+      <p class="blog-profile-bio">Clumsy birds have to start flying early.</p>
+      <div class="blog-profile-intro">
+        {{ .Content }}
+      </div>
+      <div class="blog-profile-actions" aria-label="个人链接">
+        <a class="btn btn-primary" href="https://github.com/i-kirito" target="_blank" rel="noopener">GitHub 主页</a>
+        <a class="btn btn-light" href="/docs/">浏览文档</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="blog-profile-stats" aria-label="GitHub 概览">
+    <span><strong>39</strong><em>公开仓库</em></span>
+    <span><strong>2021</strong><em>开始折腾</em></span>
+    <span><strong>Hugo</strong><em>本站框架</em></span>
+  </div>
+
+  <section class="blog-profile-section" aria-labelledby="blog-profile-now">
+    <div class="blog-profile-section-heading">
+      <p>In the midst of endeavor</p>
+      <h2 id="blog-profile-now">努力进行时</h2>
+    </div>
+    <div class="blog-profile-note">
+      <p>毕业啦，牛马 ing，正在努力成为一个大佬。喜欢前端，也折腾后端、Docker、静态站、AI 工具和各种能让生活省事的小服务。</p>
+    </div>
+    <div class="blog-profile-tags" aria-label="技术栈">
+      {{ range slice "Vue" "Hugo" "Docker" "Linux" "GitHub Pages" "Cloudflare" "Node.js" "Python" "Go" "Markdown" "AI Tools" "Nginx" -}}
+        <span>{{ . }}</span>
+      {{ end -}}
+    </div>
+  </section>
+
+  <section class="blog-profile-section" aria-labelledby="blog-profile-projects">
+    <div class="blog-profile-section-heading">
+      <p>Featured</p>
+      <h2 id="blog-profile-projects">项目入口</h2>
+    </div>
+    <div class="blog-profile-grid">
+      <a class="blog-profile-card" href="https://github.com/i-kirito/nav.github.io" target="_blank" rel="noopener">
+        <span class="blog-profile-card-mark" aria-hidden="true">Nav</span>
+        <strong>nav.github.io</strong>
+        <em>基于 WebStack-Hugo 的个人导航站，整理常用站点、在线状态和分类入口。</em>
+      </a>
+      <a class="blog-profile-card" href="https://github.com/i-kirito/doks.github.io" target="_blank" rel="noopener">
+        <span class="blog-profile-card-mark" aria-hidden="true">Docs</span>
+        <strong>doks.github.io</strong>
+        <em>基于 Doks/Hugo 的个人知识库，沉淀部署、维护、Docker 和 AI 工具教程。</em>
+      </a>
+    </div>
+  </section>
+
+  <section class="blog-profile-section" aria-labelledby="blog-profile-writing">
+    <div class="blog-profile-section-heading">
+      <p>Writing</p>
+      <h2 id="blog-profile-writing">文章与笔记</h2>
+    </div>
+    {{ if gt (len $posts) 0 -}}
+      <div class="blog-profile-grid">
+        {{ range first 4 $posts -}}
+          <a class="blog-profile-card" href="{{ .RelPermalink }}">
+            <span class="blog-profile-card-mark" aria-hidden="true">{{ .Date.Format "01.02" }}</span>
+            <strong>{{ .Title }}</strong>
+            <em>{{ with .Params.excerpt }}{{ . | plainify }}{{ else }}{{ .Params.description | plainify }}{{ end }}</em>
+          </a>
+        {{ end -}}
+      </div>
+    {{ else -}}
+      <div class="blog-profile-grid">
+        <a class="blog-profile-card" href="/docs/webstack/">
+          <span class="blog-profile-card-mark" aria-hidden="true">01</span>
+          <strong>导航站维护</strong>
+          <em>WebStack-Hugo 的内容维护、链接检测、发布和样式调整记录。</em>
+        </a>
+        <a class="blog-profile-card" href="/docs/docker/">
+          <span class="blog-profile-card-mark" aria-hidden="true">02</span>
+          <strong>Docker 常用方法</strong>
+          <em>容器、镜像、卷、网络、Compose、备份、清理和排障命令。</em>
+        </a>
+        <a class="blog-profile-card" href="/docs/ai/">
+          <span class="blog-profile-card-mark" aria-hidden="true">03</span>
+          <strong>AI 助手教程</strong>
+          <em>AstrBot、OpenClaw 和 Hermes 的部署、模型接入和排障方法。</em>
+        </a>
+        <a class="blog-profile-card" href="/docs/halo/">
+          <span class="blog-profile-card-mark" aria-hidden="true">04</span>
+          <strong>Halo2 博客部署</strong>
+          <em>Halo2 的 Docker Compose 部署、备份恢复、反向代理和日常维护。</em>
+        </a>
+      </div>
+    {{ end -}}
+  </section>
+</section>
+{{ end }}

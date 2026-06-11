@@ -1023,4 +1023,74 @@ $navbar-dark-active-color:          $link-color-dark;
 [data-dark-mode] body .page-links h3 {
   color: #dfdfd6;
 }
+
+[data-dark-mode] body.blog.list {
+  background: #18191e;
+}
+
+[data-dark-mode] body.blog.list .wrap {
+  background:
+    radial-gradient(circle at 18% 0%, rgba(168, 177, 255, 0.1), transparent 28rem),
+    #18191e;
+}
+
+[data-dark-mode] body .blog-profile-avatar {
+  border-color: #2e2e32;
+  box-shadow: 0 1.25rem 3rem rgba(0, 0, 0, 0.22);
+}
+
+[data-dark-mode] body .blog-profile-avatar-wrap::after {
+  border-color: #18191e;
+}
+
+[data-dark-mode] body .blog-profile-kicker,
+[data-dark-mode] body .blog-profile-section-heading p,
+[data-dark-mode] body .blog-profile-tags span,
+[data-dark-mode] body .blog-profile-card-mark {
+  color: #a8b1ff;
+}
+
+[data-dark-mode] body .blog-profile-copy h1,
+[data-dark-mode] body .blog-profile-stats strong,
+[data-dark-mode] body .blog-profile-section-heading h2,
+[data-dark-mode] body .blog-profile-card strong {
+  color: #dfdfd6;
+}
+
+[data-dark-mode] body .blog-profile-bio,
+[data-dark-mode] body .blog-profile-intro,
+[data-dark-mode] body .blog-profile-note,
+[data-dark-mode] body .blog-profile-card {
+  color: #c7c7d1;
+}
+
+[data-dark-mode] body .blog-profile-stats em,
+[data-dark-mode] body .blog-profile-card em {
+  color: #b7b7c2;
+}
+
+[data-dark-mode] body .blog-profile-stats span,
+[data-dark-mode] body .blog-profile-note,
+[data-dark-mode] body .blog-profile-card {
+  background: #202127;
+  border-color: #2e2e32;
+  box-shadow: none;
+}
+
+[data-dark-mode] body .blog-profile-tags span,
+[data-dark-mode] body .blog-profile-card-mark {
+  background: rgba(168, 177, 255, 0.12);
+  border-color: rgba(168, 177, 255, 0.18);
+}
+
+[data-dark-mode] body .blog-profile-section-heading {
+  border-bottom-color: #2e2e32;
+}
+
+[data-dark-mode] body .blog-profile-card:hover,
+[data-dark-mode] body .blog-profile-card:focus {
+  color: #c7c7d1;
+  border-color: rgba(168, 177, 255, 0.45);
+  box-shadow: none;
+}
 /* stylelint-enable no-duplicate-selectors, no-descending-specificity */
