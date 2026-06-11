@@ -667,6 +667,51 @@ $navbar-dark-active-color:          $link-color-dark;
 [data-dark-mode] body .doks-navbar .nav-link:focus,
 [data-dark-mode] body .doks-navbar .nav-link.active {
   color: #a8b1ff;
+  background: rgba(168, 177, 255, 0.12);
+}
+
+[data-dark-mode] body #offcanvasDoks .nav-link {
+  color: #c7c7d1;
+  background: #202127;
+  border-color: #2e2e32;
+}
+
+[data-dark-mode] body #offcanvasDoks .nav-link:hover,
+[data-dark-mode] body #offcanvasDoks .nav-link:focus,
+[data-dark-mode] body #offcanvasDoks .nav-link.active {
+  color: #a8b1ff;
+  background: rgba(168, 177, 255, 0.12);
+  border-color: rgba(168, 177, 255, 0.18);
+}
+
+[data-dark-mode] body .mobile-docs-menu h3,
+[data-dark-mode] body .mobile-docs-card em {
+  color: #b7b7c2;
+}
+
+[data-dark-mode] body .mobile-docs-card {
+  color: #c7c7d1;
+  background: #202127;
+  border-color: #2e2e32;
+  box-shadow: none;
+}
+
+[data-dark-mode] body .mobile-docs-card:hover,
+[data-dark-mode] body .mobile-docs-card:focus,
+[data-dark-mode] body .mobile-docs-card.active {
+  color: #c7c7d1;
+  border-color: rgba(168, 177, 255, 0.32);
+  box-shadow: none;
+}
+
+[data-dark-mode] body .mobile-docs-icon {
+  color: #a8b1ff;
+  background: rgba(168, 177, 255, 0.12);
+  border-color: rgba(168, 177, 255, 0.18);
+}
+
+[data-dark-mode] body .mobile-docs-card strong {
+  color: #dfdfd6;
 }
 
 [data-dark-mode] body .form-control.is-search {

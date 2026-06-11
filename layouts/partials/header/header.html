@@ -51,10 +51,16 @@
           {{- $current := . -}}
           {{- $section := $current.Section -}}
           {{ range .Site.Menus.main -}}
+            {{- $menuURL := .URL | relLangURL -}}
             {{- $active := or ($current.IsMenuCurrent "main" .) ($current.HasMenuCurrent "main" .) -}}
             {{- $active = or $active (eq .Name $current.Title) -}}
             {{- $active = or $active (and (eq .Name ($section | humanize)) (eq $current.Section $section)) -}}
             {{- $active = or $active (and (eq .Name "Blog") (eq $current.Section "blog" "contributors" "categories" "tags")) -}}
+            {{- if eq $menuURL ("/docs/" | relLangURL) -}}
+              {{- $active = or $active (eq $current.RelPermalink $menuURL) -}}
+            {{- else -}}
+              {{- $active = or $active (and (ne $menuURL ("/" | relLangURL)) (hasPrefix $current.RelPermalink $menuURL)) -}}
+            {{- end -}}
             {{ if .HasChildren }}
               <li class="nav-item dropdown">
                 <a class="nav-link dropdown-toggle ps-0 py-1" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -72,11 +78,36 @@
               </li>
             {{ else }}
               <li class="nav-item">
-                <a class="nav-link ps-0 py-1{{ if $active }} active{{ end }}" href="{{ .URL | relLangURL }}">{{ .Name }}</a>
+                <a class="nav-link ps-0 py-1{{ if $active }} active{{ end }}" href="{{ $menuURL }}">{{ .Name }}</a>
               </li>
             {{ end }}
           {{ end -}}
         </ul>
+
+        {{- $docIcons := dict "webstack" "🧭" "help" "📚" "docker" "📦" "ai" "🤖" "halo" "📝" -}}
+        {{- $docDescriptions := dict
+          "webstack" "导航内容、链接检测和样式维护"
+          "help" "文档站搭建、发布和常用方法"
+          "docker" "容器、镜像、卷、网络和 Compose"
+          "ai" "AstrBot、OpenClaw 和 Hermes 教程"
+          "halo" "Halo2 部署、维护和排障"
+        -}}
+        <section class="mobile-docs-menu d-lg-none" aria-labelledby="mobile-docs-menu-title">
+          <h3 id="mobile-docs-menu-title">文档栏目</h3>
+          <div class="mobile-docs-grid">
+            {{ range .Site.Menus.docs -}}
+              {{- $menuURL := .URL | relLangURL -}}
+              {{- $active := and (ne $menuURL ("/" | relLangURL)) (hasPrefix $current.RelPermalink $menuURL) -}}
+              <a class="mobile-docs-card{{ if $active }} active{{ end }}" href="{{ $menuURL }}"{{ if $active }} aria-current="page"{{ end }}>
+                <span class="mobile-docs-icon" aria-hidden="true">{{ or (index $docIcons .Identifier) "📄" }}</span>
+                <span>
+                  <strong>{{ .Name }}</strong>
+                  <em>{{ index $docDescriptions .Identifier }}</em>
+                </span>
+              </a>
+            {{ end -}}
+          </div>
+        </section>
 
         {{- $showFlexSearch := .Site.Params.options.flexSearch }}
         {{- if $showFlexSearch }}

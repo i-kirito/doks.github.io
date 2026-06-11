@@ -30,34 +30,33 @@
 
 [[main]]
   name = "文档"
-  url = "/docs/help/start/"
-# url = "/docs/1.0/doks/introduction/"
+  url = "/docs/"
   weight = 10
+
+[[main]]
+  name = "导航站"
+  url = "/docs/webstack/"
+  weight = 20
+
+[[main]]
+  name = "Docker"
+  url = "/docs/docker/"
+  weight = 30
+
+[[main]]
+  name = "AI 助手"
+  url = "/docs/ai/"
+  weight = 40
+
+[[main]]
+  name = "博客部署"
+  url = "/docs/halo/"
+  weight = 50
 
 [[main]]
   name = "博客"
   url = "/blog/"
-  weight = 20
-
-[[main]]
-  name = "教程"
-  weight = 30
-  identifier = "get-started"
-  url = "/docs/help/start/"
-
-[[main]]
-  name = "搭建"
-  weight = 40
-  identifier = "start"
-  url = "/docs/help/start/"
-  parent = "get-started"
-
-[[main]]
-  name = "部署"
-  weight = 50
-  identifier = "pull"
-  url = "/docs/help/pull/"
-  parent = "get-started"
+  weight = 60
 
 # [[footer]]
 #   name = "Privacy"
